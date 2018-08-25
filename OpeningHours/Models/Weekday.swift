@@ -19,14 +19,13 @@ enum Weekday: Int, CaseIterable, Codable {
 
   init(date: Date = Date()) {
     let cal = Calendar.current
-    let wd = cal.component(.weekday, from: date)
-    guard let day = Weekday(rawValue: wd) else {
+    let weekDay = cal.component(.weekday, from: date)
+    guard let day = Weekday(rawValue: weekDay) else {
       fatalError("Unsupported Weekday")
     }
     self = day
   }
 }
-
 
 extension Weekday: CustomStringConvertible {
   var description: String {

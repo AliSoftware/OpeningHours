@@ -21,7 +21,7 @@ struct Time: Codable {
     self.hour = hour
     self.minutes = minutes
   }
-  
+
   init(date: Date = Date()) {
     let cal = Calendar.current
     let comps = cal.dateComponents([.hour, .minute], from: date)

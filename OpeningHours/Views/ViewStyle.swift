@@ -21,7 +21,11 @@ struct ViewStyle {
     view.layer.cornerRadius = cornerRadius
   }
 
-  init(backgroundColor: UIColor = .yellow, borderColor: UIColor = .darkGray, borderWidth: CGFloat = 1.0, cornerRadius: CGFloat = 5) {
+  init(backgroundColor: UIColor = .yellow,
+       borderColor: UIColor = .darkGray,
+       borderWidth: CGFloat = 1.0,
+       cornerRadius: CGFloat = 5
+    ) {
     self.backgroundColor = backgroundColor
     self.borderColor = borderColor
     self.borderWidth = borderWidth

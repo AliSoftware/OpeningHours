@@ -21,9 +21,14 @@
 		37EF96D82131BE9E0029B66E /* ViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96D72131BE9E0029B66E /* ViewStyle.swift */; };
 		37EF96DB2131C1160029B66E /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96DA2131C1160029B66E /* Store.swift */; };
 		37EF96DD2131D1640029B66E /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96DC2131D1640029B66E /* ShopCell.swift */; };
+		37EF96E62131ED410029B66E /* Images+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96E42131ED400029B66E /* Images+Generated.swift */; };
+		37EF96E72131ED410029B66E /* Storyboards+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96E52131ED410029B66E /* Storyboards+Generated.swift */; };
+		6610E071491F12550A98788D /* Pods_OpeningHours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13558D62EB517CAE5058C36D /* Pods_OpeningHours.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11655B89818BC0AB4E36717F /* Pods-OpeningHours.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpeningHours.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpeningHours/Pods-OpeningHours.release.xcconfig"; sourceTree = "<group>"; };
+		13558D62EB517CAE5058C36D /* Pods_OpeningHours.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpeningHours.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37EF96B42131A8320029B66E /* OpeningHours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpeningHours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37EF96B72131A8320029B66E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37EF96B92131A8320029B66E /* ShopsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsListViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +45,9 @@
 		37EF96D72131BE9E0029B66E /* ViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStyle.swift; sourceTree = "<group>"; };
 		37EF96DA2131C1160029B66E /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		37EF96DC2131D1640029B66E /* ShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCell.swift; sourceTree = "<group>"; };
+		37EF96E42131ED400029B66E /* Images+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Images+Generated.swift"; sourceTree = "<group>"; };
+		37EF96E52131ED410029B66E /* Storyboards+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storyboards+Generated.swift"; sourceTree = "<group>"; };
+		DD2C403D2BD1C351FC94FE26 /* Pods-OpeningHours.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpeningHours.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpeningHours/Pods-OpeningHours.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6610E071491F12550A98788D /* Pods_OpeningHours.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +67,8 @@
 			children = (
 				37EF96B62131A8320029B66E /* OpeningHours */,
 				37EF96B52131A8320029B66E /* Products */,
+				E6794BBE290EB210E6F7D9EA /* Pods */,
+				D3EABCBD25D44B0168588162 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,12 +83,12 @@
 		37EF96B62131A8320029B66E /* OpeningHours */ = {
 			isa = PBXGroup;
 			children = (
+				37EF96E32131D8880029B66E /* Constants */,
 				37EF96CB2131A8920029B66E /* Models */,
 				37EF96D42131B8BF0029B66E /* Views */,
 				37EF96B72131A8320029B66E /* AppDelegate.swift */,
 				37EF96BD2131A8320029B66E /* Main.storyboard */,
-				37EF96DE2131D2300029B66E /* ShopsList */,
-				37EF96DF2131D2790029B66E /* TimeTable */,
+				37EF96E02131D7F10029B66E /* ViewControllers */,
 				37EF96D92131BF550029B66E /* Resources */,
 			);
 			path = OpeningHours;
@@ -131,6 +142,41 @@
 			path = TimeTable;
 			sourceTree = "<group>";
 		};
+		37EF96E02131D7F10029B66E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				37EF96DE2131D2300029B66E /* ShopsList */,
+				37EF96DF2131D2790029B66E /* TimeTable */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		37EF96E32131D8880029B66E /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				37EF96E42131ED400029B66E /* Images+Generated.swift */,
+				37EF96E52131ED410029B66E /* Storyboards+Generated.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		D3EABCBD25D44B0168588162 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13558D62EB517CAE5058C36D /* Pods_OpeningHours.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6794BBE290EB210E6F7D9EA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DD2C403D2BD1C351FC94FE26 /* Pods-OpeningHours.debug.xcconfig */,
+				11655B89818BC0AB4E36717F /* Pods-OpeningHours.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +184,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 37EF96C82131A8340029B66E /* Build configuration list for PBXNativeTarget "OpeningHours" */;
 			buildPhases = (
+				4A48A448588E565E09149133 /* [CP] Check Pods Manifest.lock */,
+				37EF96E12131D8110029B66E /* ⚠️ SwiftLint */,
+				37EF96E22131D83D0029B66E /* ⚠️ SwiftGen */,
 				37EF96B02131A8320029B66E /* Sources */,
 				37EF96B12131A8320029B66E /* Frameworks */,
 				37EF96B22131A8320029B66E /* Resources */,
+				6D7502B74D017A0A2D0B2D99 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -197,6 +247,83 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		37EF96E12131D8110029B66E /* ⚠️ SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "⚠️ SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+			showEnvVarsInLog = 0;
+		};
+		37EF96E22131D83D0029B66E /* ⚠️ SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "⚠️ SwiftGen";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftGen/bin/swiftgen\n";
+			showEnvVarsInLog = 0;
+		};
+		4A48A448588E565E09149133 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpeningHours-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D7502B74D017A0A2D0B2D99 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OpeningHours/Pods-OpeningHours-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Reusable/Reusable.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reusable.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OpeningHours/Pods-OpeningHours-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		37EF96B02131A8320029B66E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -210,7 +337,9 @@
 				37EF96DB2131C1160029B66E /* Store.swift in Sources */,
 				37EF96D12131B1290029B66E /* Weekday.swift in Sources */,
 				37EF96DD2131D1640029B66E /* ShopCell.swift in Sources */,
+				37EF96E72131ED410029B66E /* Storyboards+Generated.swift in Sources */,
 				37EF96CF2131B1160029B66E /* Time.swift in Sources */,
+				37EF96E62131ED410029B66E /* Images+Generated.swift in Sources */,
 				37EF96CD2131A8A80029B66E /* TimeRange.swift in Sources */,
 				37EF96BA2131A8320029B66E /* ShopsListViewController.swift in Sources */,
 			);
@@ -354,6 +483,7 @@
 		};
 		37EF96C92131A8340029B66E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD2C403D2BD1C351FC94FE26 /* Pods-OpeningHours.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -374,6 +504,7 @@
 		};
 		37EF96CA2131A8340029B66E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11655B89818BC0AB4E36717F /* Pods-OpeningHours.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

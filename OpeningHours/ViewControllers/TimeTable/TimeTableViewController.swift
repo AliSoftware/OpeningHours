@@ -38,15 +38,14 @@ class TimeTableViewController: UIViewController {
   }
 
   override func viewDidLayoutSubviews() {
-    let sz = self.timesContainerView.bounds.size
-    let step = sz.height / CGFloat(self.timeViews.count - 1)
+    let size = self.timesContainerView.bounds.size
+    let step = size.height / CGFloat(self.timeViews.count - 1)
     for (idx, pair) in self.timeViews.enumerated() {
-      let y = CGFloat(idx) * step
-      pair.label.frame = CGRect(x: 0, y: y - step/2, width: sz.width, height: step)
-      pair.line.frame = CGRect(x: 0, y: y, width: sz.width, height: 1)
+      let yPosition = CGFloat(idx) * step
+      pair.label.frame = CGRect(x: 0, y: yPosition - step/2, width: size.width, height: step)
+      pair.line.frame = CGRect(x: 0, y: yPosition, width: size.width, height: 1)
     }
     super.viewDidLayoutSubviews()
   }
 
 }
-
