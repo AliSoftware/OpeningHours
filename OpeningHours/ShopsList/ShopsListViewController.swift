@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  FirstViewController.swift
 //  OpeningHours
 //
 //  Created by Olivier HALLIGON on 25/08/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class ShopsListViewController: UITableViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()

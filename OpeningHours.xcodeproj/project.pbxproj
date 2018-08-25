@@ -8,22 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		37EF96B82131A8320029B66E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96B72131A8320029B66E /* AppDelegate.swift */; };
-		37EF96BA2131A8320029B66E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96B92131A8320029B66E /* FirstViewController.swift */; };
-		37EF96BC2131A8320029B66E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96BB2131A8320029B66E /* SecondViewController.swift */; };
+		37EF96BA2131A8320029B66E /* ShopsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96B92131A8320029B66E /* ShopsListViewController.swift */; };
+		37EF96BC2131A8320029B66E /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96BB2131A8320029B66E /* TimeTableViewController.swift */; };
 		37EF96BF2131A8320029B66E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37EF96BD2131A8320029B66E /* Main.storyboard */; };
 		37EF96C12131A8340029B66E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37EF96C02131A8340029B66E /* Assets.xcassets */; };
 		37EF96C42131A8340029B66E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37EF96C22131A8340029B66E /* LaunchScreen.storyboard */; };
+		37EF96CD2131A8A80029B66E /* TimeRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96CC2131A8A80029B66E /* TimeRange.swift */; };
+		37EF96CF2131B1160029B66E /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96CE2131B1160029B66E /* Time.swift */; };
+		37EF96D12131B1290029B66E /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96D02131B1290029B66E /* Weekday.swift */; };
+		37EF96D32131B13F0029B66E /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96D22131B13F0029B66E /* Shop.swift */; };
+		37EF96D62131B9280029B66E /* WeekdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96D52131B9280029B66E /* WeekdayView.swift */; };
+		37EF96D82131BE9E0029B66E /* ViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96D72131BE9E0029B66E /* ViewStyle.swift */; };
+		37EF96DB2131C1160029B66E /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96DA2131C1160029B66E /* Store.swift */; };
+		37EF96DD2131D1640029B66E /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96DC2131D1640029B66E /* ShopCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		37EF96B42131A8320029B66E /* OpeningHours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpeningHours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37EF96B72131A8320029B66E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		37EF96B92131A8320029B66E /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		37EF96BB2131A8320029B66E /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		37EF96B92131A8320029B66E /* ShopsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsListViewController.swift; sourceTree = "<group>"; };
+		37EF96BB2131A8320029B66E /* TimeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
 		37EF96BE2131A8320029B66E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37EF96C02131A8340029B66E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37EF96C32131A8340029B66E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37EF96C52131A8340029B66E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37EF96CC2131A8A80029B66E /* TimeRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRange.swift; sourceTree = "<group>"; };
+		37EF96CE2131B1160029B66E /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		37EF96D02131B1290029B66E /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
+		37EF96D22131B13F0029B66E /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		37EF96D52131B9280029B66E /* WeekdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayView.swift; sourceTree = "<group>"; };
+		37EF96D72131BE9E0029B66E /* ViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStyle.swift; sourceTree = "<group>"; };
+		37EF96DA2131C1160029B66E /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		37EF96DC2131D1640029B66E /* ShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +72,63 @@
 		37EF96B62131A8320029B66E /* OpeningHours */ = {
 			isa = PBXGroup;
 			children = (
+				37EF96CB2131A8920029B66E /* Models */,
+				37EF96D42131B8BF0029B66E /* Views */,
 				37EF96B72131A8320029B66E /* AppDelegate.swift */,
-				37EF96B92131A8320029B66E /* FirstViewController.swift */,
-				37EF96BB2131A8320029B66E /* SecondViewController.swift */,
 				37EF96BD2131A8320029B66E /* Main.storyboard */,
+				37EF96DE2131D2300029B66E /* ShopsList */,
+				37EF96DF2131D2790029B66E /* TimeTable */,
+				37EF96D92131BF550029B66E /* Resources */,
+			);
+			path = OpeningHours;
+			sourceTree = "<group>";
+		};
+		37EF96CB2131A8920029B66E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				37EF96CE2131B1160029B66E /* Time.swift */,
+				37EF96CC2131A8A80029B66E /* TimeRange.swift */,
+				37EF96D02131B1290029B66E /* Weekday.swift */,
+				37EF96D22131B13F0029B66E /* Shop.swift */,
+				37EF96DA2131C1160029B66E /* Store.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		37EF96D42131B8BF0029B66E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				37EF96D72131BE9E0029B66E /* ViewStyle.swift */,
+				37EF96D52131B9280029B66E /* WeekdayView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		37EF96D92131BF550029B66E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				37EF96C02131A8340029B66E /* Assets.xcassets */,
 				37EF96C22131A8340029B66E /* LaunchScreen.storyboard */,
 				37EF96C52131A8340029B66E /* Info.plist */,
 			);
-			path = OpeningHours;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		37EF96DE2131D2300029B66E /* ShopsList */ = {
+			isa = PBXGroup;
+			children = (
+				37EF96B92131A8320029B66E /* ShopsListViewController.swift */,
+				37EF96DC2131D1640029B66E /* ShopCell.swift */,
+			);
+			path = ShopsList;
+			sourceTree = "<group>";
+		};
+		37EF96DF2131D2790029B66E /* TimeTable */ = {
+			isa = PBXGroup;
+			children = (
+				37EF96BB2131A8320029B66E /* TimeTableViewController.swift */,
+			);
+			path = TimeTable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +202,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37EF96BC2131A8320029B66E /* SecondViewController.swift in Sources */,
+				37EF96D82131BE9E0029B66E /* ViewStyle.swift in Sources */,
+				37EF96BC2131A8320029B66E /* TimeTableViewController.swift in Sources */,
+				37EF96D62131B9280029B66E /* WeekdayView.swift in Sources */,
 				37EF96B82131A8320029B66E /* AppDelegate.swift in Sources */,
-				37EF96BA2131A8320029B66E /* FirstViewController.swift in Sources */,
+				37EF96D32131B13F0029B66E /* Shop.swift in Sources */,
+				37EF96DB2131C1160029B66E /* Store.swift in Sources */,
+				37EF96D12131B1290029B66E /* Weekday.swift in Sources */,
+				37EF96DD2131D1640029B66E /* ShopCell.swift in Sources */,
+				37EF96CF2131B1160029B66E /* Time.swift in Sources */,
+				37EF96CD2131A8A80029B66E /* TimeRange.swift in Sources */,
+				37EF96BA2131A8320029B66E /* ShopsListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,15 +356,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YC775YC6LJ;
-				INFOPLIST_FILE = OpeningHours/Info.plist;
+				INFOPLIST_FILE = OpeningHours/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alisoftware.openinghours.OpeningHours;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,15 +376,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YC775YC6LJ;
-				INFOPLIST_FILE = OpeningHours/Info.plist;
+				INFOPLIST_FILE = OpeningHours/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.alisoftware.openinghours.OpeningHours;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
