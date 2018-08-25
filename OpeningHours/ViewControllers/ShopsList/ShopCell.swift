@@ -7,9 +7,28 @@
 //
 
 import UIKit
+import Reusable
 
-class ShopCell: UITableViewCell {
+class ShopCell: UITableViewCell, Reusable {
   @IBOutlet var statusView: UIView!
   @IBOutlet var shopNameLabel: UILabel!
   @IBOutlet var nextTimeRange: UILabel!
+
+  func setup(shop: Shop) {
+    shopNameLabel.text = shop.name
+    let activeTimeRange = shop.activeTimeRange()
+    if let activeTimeRange = activeTimeRange {
+      let timeLeft = activeTimeRange.minutesRemaining()
+      if timeLeft < 30 {
+        statusView.backgroundColor = .orange
+        nextTimeRange.text = "\(activeTimeRange) — \(L10n.shopClosingSoon(timeLeft))"
+      } else {
+        statusView.backgroundColor = .green
+        nextTimeRange.text = "\(activeTimeRange) — \(L10n.shopOpen)"
+      }
+    } else {
+      statusView.backgroundColor = .red
+      nextTimeRange.text = L10n.shopClosed
+    }
+  }
 }

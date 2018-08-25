@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.14" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E1o-b0-qKK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14269.14" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,17 +12,17 @@
         <!--ShopsList-->
         <scene sceneID="inJ-Rb-6LA">
             <objects>
-                <tableViewController id="jcd-DE-PB2" userLabel="ShopsList" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ShopsList" id="jcd-DE-PB2" userLabel="ShopsList" customClass="ShopsListViewController" customModule="OpeningHours" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Pht-Hd-70V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShopCell" rowHeight="64" id="fKg-Gr-vdc" customClass="ShopCell" customModule="OpeningHours" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ShopCell" rowHeight="64" id="fKg-Gr-vdc" customClass="ShopCell" customModule="OpeningHours" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fKg-Gr-vdc" id="bOF-bA-ape">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="63.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1rX-Of-UXF">
@@ -34,13 +34,13 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npR-o0-1SE">
-                                            <rect key="frame" x="46" y="5" width="324" height="21"/>
+                                            <rect key="frame" x="46" y="5" width="290" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sI3-QJ-ysi">
-                                            <rect key="frame" x="46" y="31" width="324" height="27.5"/>
+                                            <rect key="frame" x="46" y="31" width="290" height="27.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -62,7 +62,6 @@
                                     <outlet property="nextTimeRange" destination="sI3-QJ-ysi" id="sub-xx-rjV"/>
                                     <outlet property="shopNameLabel" destination="npR-o0-1SE" id="feE-LR-r6G"/>
                                     <outlet property="statusView" destination="1rX-Of-UXF" id="1mr-hl-YN7"/>
-                                    <segue destination="PfJ-xW-For" kind="showDetail" id="i6V-na-7YH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -76,23 +75,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FV0-7D-vqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1648.8" y="-382.75862068965517"/>
-        </scene>
-        <!--Root View Controller-->
-        <scene sceneID="tD7-kQ-hNo">
-            <objects>
-                <navigationController id="E1o-b0-qKK" userLabel="Root View Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Shops" id="JJA-kI-dob"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="daz-mE-TZa">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="jcd-DE-PB2" kind="relationship" relationship="rootViewController" id="7g9-ay-xQy"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uuc-ZE-oeD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="804" y="-383"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="4Mi-xm-7e8">
@@ -369,16 +351,13 @@
         <!--Container-->
         <scene sceneID="BBg-9Q-wp6">
             <objects>
-                <viewController id="PfJ-xW-For" userLabel="Container" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShopDetails" id="PfJ-xW-For" userLabel="Container" customClass="ShopDetailsViewController" customModule="OpeningHours" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zao-9T-QAD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQ4-SL-OjO">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <connections>
-                                    <segue destination="8rJ-Kc-sve" kind="embed" id="Wrt-AI-a4C"/>
-                                </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

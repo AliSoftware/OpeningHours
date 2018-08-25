@@ -8,14 +8,20 @@
 
 import Foundation
 
-struct Shop: Codable {
-  let name: String
-  var timeTable: [Weekday: [TimeRange]]
+typealias TimeTable = [Weekday: [TimeRange]]
 
-  func isOpen(on day: Weekday = Weekday(), at time: Time = Time()) -> Bool {
+struct Shop: Codable {
+  var name: String
+  var timeTable: TimeTable
+
+  func activeTimeRange(on day: Weekday = .today, at time: Time = .now) -> TimeRange? {
     guard let ranges = timeTable[day] else {
-      return false
+      return nil
     }
-    return ranges.contains { range in range.contains(time) }
+    return ranges.last(where: { range in range.contains(time) })
+  }
+
+  func isOpen(on day: Weekday = .today, at time: Time = .now) -> Bool {
+    return activeTimeRange(on: day, at: time) != nil
   }
 }

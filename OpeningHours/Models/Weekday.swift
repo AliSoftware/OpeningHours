@@ -25,6 +25,10 @@ enum Weekday: Int, CaseIterable, Codable {
     }
     self = day
   }
+
+  static var today: Weekday {
+    return Weekday()
+  }
 }
 
 extension Weekday: CustomStringConvertible {

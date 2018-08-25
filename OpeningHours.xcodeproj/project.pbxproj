@@ -23,6 +23,9 @@
 		37EF96DD2131D1640029B66E /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96DC2131D1640029B66E /* ShopCell.swift */; };
 		37EF96E62131ED410029B66E /* Images+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96E42131ED400029B66E /* Images+Generated.swift */; };
 		37EF96E72131ED410029B66E /* Storyboards+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96E52131ED410029B66E /* Storyboards+Generated.swift */; };
+		37EF96E92131EF900029B66E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37EF96E82131EF900029B66E /* Localizable.strings */; };
+		37EF96EB2131EFF70029B66E /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96EA2131EFF70029B66E /* Strings+Generated.swift */; };
+		37EF96ED21320ADB0029B66E /* ShopDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96EC21320ADB0029B66E /* ShopDetailsViewController.swift */; };
 		6610E071491F12550A98788D /* Pods_OpeningHours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13558D62EB517CAE5058C36D /* Pods_OpeningHours.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +50,9 @@
 		37EF96DC2131D1640029B66E /* ShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCell.swift; sourceTree = "<group>"; };
 		37EF96E42131ED400029B66E /* Images+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Images+Generated.swift"; sourceTree = "<group>"; };
 		37EF96E52131ED410029B66E /* Storyboards+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storyboards+Generated.swift"; sourceTree = "<group>"; };
+		37EF96E82131EF900029B66E /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		37EF96EA2131EFF70029B66E /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		37EF96EC21320ADB0029B66E /* ShopDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailsViewController.swift; sourceTree = "<group>"; };
 		DD2C403D2BD1C351FC94FE26 /* Pods-OpeningHours.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpeningHours.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpeningHours/Pods-OpeningHours.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,11 +89,11 @@
 		37EF96B62131A8320029B66E /* OpeningHours */ = {
 			isa = PBXGroup;
 			children = (
+				37EF96B72131A8320029B66E /* AppDelegate.swift */,
+				37EF96BD2131A8320029B66E /* Main.storyboard */,
 				37EF96E32131D8880029B66E /* Constants */,
 				37EF96CB2131A8920029B66E /* Models */,
 				37EF96D42131B8BF0029B66E /* Views */,
-				37EF96B72131A8320029B66E /* AppDelegate.swift */,
-				37EF96BD2131A8320029B66E /* Main.storyboard */,
 				37EF96E02131D7F10029B66E /* ViewControllers */,
 				37EF96D92131BF550029B66E /* Resources */,
 			);
@@ -121,6 +127,7 @@
 				37EF96C02131A8340029B66E /* Assets.xcassets */,
 				37EF96C22131A8340029B66E /* LaunchScreen.storyboard */,
 				37EF96C52131A8340029B66E /* Info.plist */,
+				37EF96E82131EF900029B66E /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -128,8 +135,8 @@
 		37EF96DE2131D2300029B66E /* ShopsList */ = {
 			isa = PBXGroup;
 			children = (
-				37EF96B92131A8320029B66E /* ShopsListViewController.swift */,
 				37EF96DC2131D1640029B66E /* ShopCell.swift */,
+				37EF96B92131A8320029B66E /* ShopsListViewController.swift */,
 			);
 			path = ShopsList;
 			sourceTree = "<group>";
@@ -146,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				37EF96DE2131D2300029B66E /* ShopsList */,
+				37EF96EC21320ADB0029B66E /* ShopDetailsViewController.swift */,
 				37EF96DF2131D2790029B66E /* TimeTable */,
 			);
 			path = ViewControllers;
@@ -156,6 +164,7 @@
 			children = (
 				37EF96E42131ED400029B66E /* Images+Generated.swift */,
 				37EF96E52131ED410029B66E /* Storyboards+Generated.swift */,
+				37EF96EA2131EFF70029B66E /* Strings+Generated.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -240,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37EF96C42131A8340029B66E /* LaunchScreen.storyboard in Resources */,
+				37EF96E92131EF900029B66E /* Localizable.strings in Resources */,
 				37EF96C12131A8340029B66E /* Assets.xcassets in Resources */,
 				37EF96BF2131A8320029B66E /* Main.storyboard in Resources */,
 			);
@@ -333,6 +343,7 @@
 				37EF96BC2131A8320029B66E /* TimeTableViewController.swift in Sources */,
 				37EF96D62131B9280029B66E /* WeekdayView.swift in Sources */,
 				37EF96B82131A8320029B66E /* AppDelegate.swift in Sources */,
+				37EF96EB2131EFF70029B66E /* Strings+Generated.swift in Sources */,
 				37EF96D32131B13F0029B66E /* Shop.swift in Sources */,
 				37EF96DB2131C1160029B66E /* Store.swift in Sources */,
 				37EF96D12131B1290029B66E /* Weekday.swift in Sources */,
@@ -341,6 +352,7 @@
 				37EF96CF2131B1160029B66E /* Time.swift in Sources */,
 				37EF96E62131ED410029B66E /* Images+Generated.swift in Sources */,
 				37EF96CD2131A8A80029B66E /* TimeRange.swift in Sources */,
+				37EF96ED21320ADB0029B66E /* ShopDetailsViewController.swift in Sources */,
 				37EF96BA2131A8320029B66E /* ShopsListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  OpeningHours
+
+  Created by Olivier HALLIGON on 25/08/2018.
+  Copyright © 2018 AliSoftware. All rights reserved.
+*/
+
+"shop_list_title" = "Enseignes";
+"shop_closed" = "Fermé";
+"shop_open" = "Ouvert";
+"shop_closing_soon" = "Ferme dans %d minutes";
