@@ -17,25 +17,19 @@ class TimeTableViewController: UIViewController {
   // MARK: - Public Properties
 
   var timeTable: TimeTable = [:]
-  var timer: Timer?
 
   // MARK: LifeCycle
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
     self.configure(with: timeTable)
     self.setupUI()
 
-    self.timer?.invalidate()
-    self.timer = Timer(timeInterval: 5*60, repeats: true, block: { [weak self] _ in
+    self.refreshClock = Clock { [weak self] in
       self?.setCurrentTime(to: Weekday.today, at: Time.now)
-    })
+    }
     self.setCurrentTime(to: Weekday.today, at: Time.now)
-  }
-
-  deinit {
-    timer?.invalidate()
   }
 
   override func viewDidLayoutSubviews() {
@@ -63,6 +57,7 @@ class TimeTableViewController: UIViewController {
   // MARK: - Private Properties
 
   private var timeViews: [(label: UILabel, line: UIView)] = []
+  private var refreshClock: Clock?
 
   // MARK: - Private Methods
 

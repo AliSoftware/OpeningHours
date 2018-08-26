@@ -10,10 +10,10 @@ import Foundation
 
 struct TimeRange {
   // MARK: - Public Properties
-  
+
   let start: Time
   let end: Time
-  
+
   var durationInMinutes: Int {
     return self.end.totalMinutes - self.start.totalMinutes
   }

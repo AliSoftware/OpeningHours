@@ -10,7 +10,7 @@ import UIKit
 
 class ShopsListViewController: UITableViewController {
   // MARK: - Public Properties
-  
+
   var shops: [Shop] = []
 
   // MARK: - LifeCycle
@@ -22,6 +22,10 @@ class ShopsListViewController: UITableViewController {
     self.navigationItem.rightBarButtonItems = [
       UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(toggleEditMode))
     ]
+
+    self.refreshClock = Clock { [weak self] in
+      self?.tableView.reloadData() // To update open/close status on each cell
+    }
   }
 
   // MARK: - UITableViewDataSource
@@ -45,6 +49,10 @@ class ShopsListViewController: UITableViewController {
     container.timeTable = shop.timeTable
     self.navigationController?.pushViewController(container, animated: true)
   }
+
+  // MARK: - Private Properties
+
+  private var refreshClock: Clock?
 
   // MARK: - Private Methods
 

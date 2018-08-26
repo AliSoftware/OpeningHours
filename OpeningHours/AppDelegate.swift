@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ///
 
     let shopsListVC = StoryboardScene.Main.shopsList.instantiate()
-    shopsListVC.shops = Store.main.shops
+    shopsListVC.shops = Prefs.main.shops
 
     let window = UIWindow()
     let navCtrl = UINavigationController(rootViewController: shopsListVC)
@@ -67,7 +67,7 @@ func fillDummyValues() {
     14.00 - 20.00
   ]
   let ranges5: [TimeRange] = [
-     0.00 -  2.00
+     0.00 -  6.40
   ]
   let shop1 = Shop(name: "Boulangerie", timeTable: [
     .monday: ranges1, .tuesday: ranges1, .wednesday: ranges2, .thursday: ranges1, .friday: ranges1, .saturday: ranges3
@@ -79,5 +79,5 @@ func fillDummyValues() {
     .tuesday: ranges1, .wednesday: ranges2, .thursday: ranges1, .friday: ranges1, .saturday: ranges3, .sunday: ranges5
     ])
 
-  Store.main.shops = [shop1, shop2, shop3]
+  Prefs.main.shops = [shop1, shop2, shop3]
 }

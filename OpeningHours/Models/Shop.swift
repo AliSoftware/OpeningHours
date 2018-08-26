@@ -17,7 +17,7 @@ struct Shop: Codable {
   var timeTable: TimeTable
 
   // MARK: - Public Methods
-  
+
   func activeTimeRange(on day: Weekday = .today, at time: Time = .now) -> TimeRange? {
     guard let ranges = timeTable[day] else {
       return nil

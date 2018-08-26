@@ -8,14 +8,14 @@
 
 import Foundation
 
-class Store {
+struct Prefs {
   // MARK: - Public Type Properties
 
-  static let main = Store(defaults: .standard)
+  static let main = Prefs(defaults: .standard)
 
   var shops: [Shop] {
     get {
-      guard let data = self.defaults.data(forKey: Store.shopsKey) else {
+      guard let data = self.defaults.data(forKey: Prefs.shopsKey) else {
         return []
       }
       let decoder = JSONDecoder()
@@ -26,11 +26,11 @@ class Store {
         return []
       }
     }
-    set {
+    nonmutating set {
       let encoder = JSONEncoder()
       do {
         let data = try encoder.encode(newValue)
-        self.defaults.set(data, forKey: Store.shopsKey)
+        self.defaults.set(data, forKey: Prefs.shopsKey)
       } catch {
         print("Unable to encode shops to UserDefaults")
       }

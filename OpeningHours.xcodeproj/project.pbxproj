@@ -19,13 +19,15 @@
 		37EF96D32131B13F0029B66E /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96D22131B13F0029B66E /* Shop.swift */; };
 		37EF96D62131B9280029B66E /* WeekdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96D52131B9280029B66E /* WeekdayView.swift */; };
 		37EF96D82131BE9E0029B66E /* ViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96D72131BE9E0029B66E /* ViewStyle.swift */; };
-		37EF96DB2131C1160029B66E /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96DA2131C1160029B66E /* Store.swift */; };
+		37EF96DB2131C1160029B66E /* Prefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96DA2131C1160029B66E /* Prefs.swift */; };
 		37EF96DD2131D1640029B66E /* ShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96DC2131D1640029B66E /* ShopCell.swift */; };
 		37EF96E62131ED410029B66E /* Images+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96E42131ED400029B66E /* Images+Generated.swift */; };
 		37EF96E72131ED410029B66E /* Storyboards+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96E52131ED410029B66E /* Storyboards+Generated.swift */; };
 		37EF96E92131EF900029B66E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37EF96E82131EF900029B66E /* Localizable.strings */; };
 		37EF96EB2131EFF70029B66E /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96EA2131EFF70029B66E /* Strings+Generated.swift */; };
 		37EF96ED21320ADB0029B66E /* ShopDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96EC21320ADB0029B66E /* ShopDetailsViewController.swift */; };
+		37EF96F0213255920029B66E /* SlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96EF213255920029B66E /* SlotView.swift */; };
+		37EF96F221325C7D0029B66E /* Clock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96F121325C7D0029B66E /* Clock.swift */; };
 		6610E071491F12550A98788D /* Pods_OpeningHours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13558D62EB517CAE5058C36D /* Pods_OpeningHours.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,13 +48,15 @@
 		37EF96D22131B13F0029B66E /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		37EF96D52131B9280029B66E /* WeekdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayView.swift; sourceTree = "<group>"; };
 		37EF96D72131BE9E0029B66E /* ViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStyle.swift; sourceTree = "<group>"; };
-		37EF96DA2131C1160029B66E /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		37EF96DA2131C1160029B66E /* Prefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefs.swift; sourceTree = "<group>"; };
 		37EF96DC2131D1640029B66E /* ShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCell.swift; sourceTree = "<group>"; };
 		37EF96E42131ED400029B66E /* Images+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Images+Generated.swift"; sourceTree = "<group>"; };
 		37EF96E52131ED410029B66E /* Storyboards+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Storyboards+Generated.swift"; sourceTree = "<group>"; };
 		37EF96E82131EF900029B66E /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		37EF96EA2131EFF70029B66E /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		37EF96EC21320ADB0029B66E /* ShopDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailsViewController.swift; sourceTree = "<group>"; };
+		37EF96EF213255920029B66E /* SlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotView.swift; sourceTree = "<group>"; };
+		37EF96F121325C7D0029B66E /* Clock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock.swift; sourceTree = "<group>"; };
 		DD2C403D2BD1C351FC94FE26 /* Pods-OpeningHours.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpeningHours.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpeningHours/Pods-OpeningHours.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,7 +111,8 @@
 				37EF96CC2131A8A80029B66E /* TimeRange.swift */,
 				37EF96D02131B1290029B66E /* Weekday.swift */,
 				37EF96D22131B13F0029B66E /* Shop.swift */,
-				37EF96DA2131C1160029B66E /* Store.swift */,
+				37EF96DA2131C1160029B66E /* Prefs.swift */,
+				37EF96F121325C7D0029B66E /* Clock.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				37EF96D72131BE9E0029B66E /* ViewStyle.swift */,
+				37EF96EF213255920029B66E /* SlotView.swift */,
 				37EF96D52131B9280029B66E /* WeekdayView.swift */,
 			);
 			path = Views;
@@ -353,7 +359,9 @@
 				37EF96B82131A8320029B66E /* AppDelegate.swift in Sources */,
 				37EF96EB2131EFF70029B66E /* Strings+Generated.swift in Sources */,
 				37EF96D32131B13F0029B66E /* Shop.swift in Sources */,
-				37EF96DB2131C1160029B66E /* Store.swift in Sources */,
+				37EF96F221325C7D0029B66E /* Clock.swift in Sources */,
+				37EF96F0213255920029B66E /* SlotView.swift in Sources */,
+				37EF96DB2131C1160029B66E /* Prefs.swift in Sources */,
 				37EF96D12131B1290029B66E /* Weekday.swift in Sources */,
 				37EF96DD2131D1640029B66E /* ShopCell.swift in Sources */,
 				37EF96E72131ED410029B66E /* Storyboards+Generated.swift in Sources */,
