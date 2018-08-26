@@ -11,9 +11,13 @@ import Foundation
 typealias TimeTable = [Weekday: [TimeRange]]
 
 struct Shop: Codable {
+  // MARK: - Public Properties
+
   var name: String
   var timeTable: TimeTable
 
+  // MARK: - Public Methods
+  
   func activeTimeRange(on day: Weekday = .today, at time: Time = .now) -> TimeRange? {
     guard let ranges = timeTable[day] else {
       return nil

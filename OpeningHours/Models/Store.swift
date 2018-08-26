@@ -9,13 +9,9 @@
 import Foundation
 
 class Store {
-  static let main = Store(defaults: .standard)
-  private let defaults: UserDefaults
-  private static let shopsKey = "shops"
+  // MARK: - Public Type Properties
 
-  init(defaults: UserDefaults) {
-    self.defaults = defaults
-  }
+  static let main = Store(defaults: .standard)
 
   var shops: [Shop] {
     get {
@@ -33,11 +29,22 @@ class Store {
     set {
       let encoder = JSONEncoder()
       do {
-      let data = try encoder.encode(newValue)
-      self.defaults.set(data, forKey: Store.shopsKey)
+        let data = try encoder.encode(newValue)
+        self.defaults.set(data, forKey: Store.shopsKey)
       } catch {
         print("Unable to encode shops to UserDefaults")
       }
     }
   }
+
+  // MARK: - Setup
+
+  init(defaults: UserDefaults) {
+    self.defaults = defaults
+  }
+
+  // MARK: - Private Properties
+
+  private let defaults: UserDefaults
+  private static let shopsKey = "shops"
 }

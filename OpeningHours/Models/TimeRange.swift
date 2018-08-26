@@ -9,19 +9,41 @@
 import Foundation
 
 struct TimeRange {
+  // MARK: - Public Properties
+  
   let start: Time
   let end: Time
+  
+  var durationInMinutes: Int {
+    return self.end.totalMinutes - self.start.totalMinutes
+  }
+
+  // MARK: - Setup
 
   init(start: Time, end: Time) {
     assert(start < end, "start must be < to end")
     self.start = start
     self.end = end
   }
+}
 
-  var durationInMinutes: Int {
-    return self.end.totalMinutes - self.start.totalMinutes
+// MARK: - Public Methods
+
+extension TimeRange {
+  func intersects(with other: TimeRange) -> Bool {
+    return (self.start <= other.end) && (self.end >= other.start)
+  }
+
+  func contains(_ time: Time) -> Bool {
+    return start <= time && time <= end
+  }
+
+  func minutesRemaining(at time: Time = .now) -> Int {
+    return self.end.totalMinutes - time.totalMinutes
   }
 }
+
+// MARK: - Codable
 
 extension TimeRange: Codable {
   init(from decoder: Decoder) throws {
@@ -39,19 +61,7 @@ extension TimeRange: Codable {
   }
 }
 
-extension TimeRange {
-  func intersects(with other: TimeRange) -> Bool {
-    return (self.start <= other.end) && (self.end >= other.start)
-  }
-
-  func contains(_ time: Time) -> Bool {
-    return start <= time && time <= end
-  }
-
-  func minutesRemaining(at time: Time = .now) -> Int {
-    return self.end.totalMinutes - time.totalMinutes
-  }
-}
+// MARK: - CustomStringConvertible
 
 extension TimeRange: CustomStringConvertible {
   var description: String {

@@ -10,10 +10,14 @@ import UIKit
 import Reusable
 
 class ShopCell: UITableViewCell, Reusable {
+  // MARK: - IBOutlets
+
   @IBOutlet var statusView: UIView!
   @IBOutlet var shopNameLabel: UILabel!
   @IBOutlet var nextTimeRange: UILabel!
 
+  // MARK: - Public Methods
+  
   func setup(shop: Shop) {
     shopNameLabel.text = shop.name
     let activeTimeRange = shop.activeTimeRange()

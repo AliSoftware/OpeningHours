@@ -9,6 +9,8 @@
 import Foundation
 
 struct Time {
+  // MARK: - Public Properties
+
   let hour: Int
   let minutes: Int
 
@@ -16,13 +18,14 @@ struct Time {
     return hour * 60 + minutes
   }
 
-  static let max = 24*60
+  // MARK: - Public Type Properties
 
+  static let max = 24*60
   static var now: Time {
     return Time()
   }
 
-  // MARK: Inits
+  // MARK: - Setup
 
   init(hour: Int, minutes: Int) {
     self.hour = hour
@@ -42,6 +45,8 @@ struct Time {
   }
 }
 
+// MARK: - Codable
+
 extension Time: Codable {
   init(from decoder: Decoder) throws {
     let value = try decoder.singleValueContainer().decode(Int.self)
@@ -54,11 +59,15 @@ extension Time: Codable {
   }
 }
 
+// MARK: - CustomStringConvertible
+
 extension Time: CustomStringConvertible {
   var description: String {
     return String(format: "%02dh%02d", hour, minutes)
   }
 }
+
+// MARK: - Comparable
 
 extension Time: Comparable {
   static func < (lhs: Time, rhs: Time) -> Bool {

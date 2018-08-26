@@ -9,7 +9,11 @@
 import UIKit
 
 class ShopsListViewController: UITableViewController {
+  // MARK: - Public Properties
+  
   var shops: [Shop] = []
+
+  // MARK: - LifeCycle
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -19,6 +23,8 @@ class ShopsListViewController: UITableViewController {
       UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(toggleEditMode))
     ]
   }
+
+  // MARK: - UITableViewDataSource
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return shops.count
@@ -39,6 +45,8 @@ class ShopsListViewController: UITableViewController {
     container.timeTable = shop.timeTable
     self.navigationController?.pushViewController(container, animated: true)
   }
+
+  // MARK: - Private Methods
 
   @objc
   private func toggleEditMode() {

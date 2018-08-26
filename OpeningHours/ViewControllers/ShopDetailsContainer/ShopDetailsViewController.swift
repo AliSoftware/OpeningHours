@@ -9,10 +9,15 @@
 import UIKit
 
 class ShopDetailsViewController: UIViewController {
+  // MARK: - IBOutlets
+
   @IBOutlet private var container: UIView!
 
-  private var currentViewController: UIViewController?
+  // MARK: - Public Properties
+
   var timeTable: TimeTable = [:]
+
+  // MARK: - LifeCycle
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -26,6 +31,12 @@ class ShopDetailsViewController: UIViewController {
 
     showTable()
   }
+
+  // MARK: - Private Properties
+
+  private var currentViewController: UIViewController?
+
+  // MARK: - Private Methods
 
   @objc
   private func showTable() {

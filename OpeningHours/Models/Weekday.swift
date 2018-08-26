@@ -17,6 +17,14 @@ enum Weekday: Int, CaseIterable, Codable {
   case friday = 6
   case saturday = 7
 
+  // MARK: - Public Type Properties
+
+  static var today: Weekday {
+    return Weekday()
+  }
+
+  // MARK: - Setup
+
   init(date: Date = Date()) {
     let cal = Calendar.current
     let weekDay = cal.component(.weekday, from: date)
@@ -25,11 +33,9 @@ enum Weekday: Int, CaseIterable, Codable {
     }
     self = day
   }
-
-  static var today: Weekday {
-    return Weekday()
-  }
 }
+
+// MARK: - CustomStringConvertible
 
 extension Weekday: CustomStringConvertible {
   var description: String {

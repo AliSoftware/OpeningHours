@@ -21,3 +21,24 @@ struct ViewStyle {
     view.layer.cornerRadius = cornerRadius
   }
 }
+
+extension ViewStyle {
+  static let timeRange = ViewStyle(
+    backgroundColor: .yellow,
+    borderColor: .black,
+    borderWidth: 1,
+    cornerRadius: 2
+  )
+  static let lightFrame = ViewStyle(
+    backgroundColor: nil,
+    borderColor: .lightGray,
+    borderWidth: 1,
+    cornerRadius: 0
+  )
+  static let nowIndicator = ViewStyle(
+    backgroundColor: UIColor.red.withAlphaComponent(0.4),
+    borderColor: .red,
+    borderWidth: 1,
+    cornerRadius: 1
+  )
+}

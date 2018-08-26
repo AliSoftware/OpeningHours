@@ -9,13 +9,18 @@
 import UIKit
 
 class TimeTableViewController: UIViewController {
+  // MARK: - IBOutlets
+
   @IBOutlet private var timesContainerView: UIView!
   @IBOutlet private var weekdayViews: [WeekdayView] = []
 
-  private var timeViews: [(label: UILabel, line: UIView)] = []
+  // MARK: - Public Properties
+
   var timeTable: TimeTable = [:]
   var timer: Timer?
 
+  // MARK: LifeCycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -55,12 +60,17 @@ class TimeTableViewController: UIViewController {
     super.viewDidLayoutSubviews()
   }
 
+  // MARK: - Private Properties
+
+  private var timeViews: [(label: UILabel, line: UIView)] = []
+
+  // MARK: - Private Methods
+
   private func configure(with timeTable: TimeTable) {
     for view in weekdayViews {
       guard let weekday = Weekday(rawValue: view.tag) else { continue }
       guard let ranges = timeTable[weekday] else { continue }
-      let style = ViewStyle(backgroundColor: .yellow, borderColor: .black, borderWidth: 1, cornerRadius: 2)
-      view.configure(ranges: ranges, style: style)
+      view.configure(ranges: ranges, style: .timeRange)
     }
   }
 
@@ -85,13 +95,12 @@ class TimeTableViewController: UIViewController {
       self.view.addSubview(pair.line)
     }
 
-    let style = ViewStyle(backgroundColor: nil, borderColor: .lightGray, borderWidth: 1, cornerRadius: 0)
     self.weekdayViews.forEach({
-      style.apply(to: $0)
+      ViewStyle.lightFrame.apply(to: $0)
     })
   }
 
-  func setCurrentTime(to weekday: Weekday, at time: Time) {
+  private func setCurrentTime(to weekday: Weekday, at time: Time) {
     for view in self.weekdayViews {
       view.currentTime = view.tag == weekday.rawValue ? time : nil
     }

@@ -9,19 +9,7 @@
 import UIKit
 
 class WeekdayView: UIView {
-  private var rangeViews: [(view: UIView, range: TimeRange)] = []
-
-  private static let timeViewHeight: CGFloat = 3.0
-  private let currentTimeView: UIView = {
-    let view = UIView()
-    ViewStyle(
-      backgroundColor: UIColor.red.withAlphaComponent(0.4),
-      borderColor: .red,
-      borderWidth: 1,
-      cornerRadius: WeekdayView.timeViewHeight/2
-    ).apply(to: view)
-    return view
-  }()
+  // MARK: - Public Properties
 
   var currentTime: Time? {
     didSet {
@@ -29,26 +17,19 @@ class WeekdayView: UIView {
     }
   }
 
-  func configure(ranges: [TimeRange], style: ViewStyle) {
-    self.rangeViews.forEach { $0.view.removeFromSuperview() }
-    let pairs = ranges.map { (range: TimeRange) -> (UIView, TimeRange) in
-      let view = UIView()
-      style.apply(to: view)
-      return (view, range)
-    }
-    self.rangeViews = pairs
-    self.rangeViews.forEach { self.addSubview($0.view) }
-  }
+  // MARK: - Setup
 
   override init(frame: CGRect) {
     super.init(frame: frame)
-    self.addSubview(currentTimeView)
+    self.setup()
   }
 
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    self.addSubview(currentTimeView)
+    self.setup()
   }
+
+  // MARK: - LifeCycle
 
   override func layoutSubviews() {
     super.layoutSubviews()
@@ -67,6 +48,19 @@ class WeekdayView: UIView {
     updateCurrentTime()
   }
 
+  // MARK: - Methods
+
+  func configure(ranges: [TimeRange], style: ViewStyle) {
+    self.rangeViews.forEach { $0.view.removeFromSuperview() }
+    let pairs = ranges.map { (range: TimeRange) -> (UIView, TimeRange) in
+      let view = UIView()
+      style.apply(to: view)
+      return (view, range)
+    }
+    self.rangeViews = pairs
+    self.rangeViews.forEach { self.addSubview($0.view) }
+  }
+
   func apply(style: ViewStyle, currentTimeStyle: ViewStyle) {
     rangeViews.forEach {
       style.apply(to: $0.view)
@@ -74,7 +68,25 @@ class WeekdayView: UIView {
     style.apply(to: self.currentTimeView)
   }
 
-  func updateCurrentTime() {
+  // MARK: - Private Properties
+
+  private var rangeViews: [(view: UIView, range: TimeRange)] = []
+  private static let timeViewHeight: CGFloat = 3.0
+  private let currentTimeView: UIView = {
+    let view = UIView()
+    ViewStyle.nowIndicator.apply(to: view)
+    return view
+  }()
+
+  // MARK: - Private Methods
+
+  private func setup() {
+    self.addSubview(currentTimeView)
+    let tapGR = UITapGestureRecognizer(target: self, action: #selector(showMenu(_:)))
+    self.addGestureRecognizer(tapGR)
+  }
+
+  private func updateCurrentTime() {
     guard let time = self.currentTime else {
       self.currentTimeView.isHidden = true
       return
@@ -96,4 +108,9 @@ class WeekdayView: UIView {
 
   // TODO: Implement UIMenuController to show details of each TimeRange view
   // https://nshipster.com/uimenucontroller/
+
+  @objc
+  private func showMenu(_ sender: UITapGestureRecognizer) {
+
+  }
 }

@@ -153,7 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				37EF96DE2131D2300029B66E /* ShopsList */,
-				37EF96EC21320ADB0029B66E /* ShopDetailsViewController.swift */,
+				37EF96EE21324E950029B66E /* ShopDetailsContainer */,
 				37EF96DF2131D2790029B66E /* TimeTable */,
 			);
 			path = ViewControllers;
@@ -167,6 +167,14 @@
 				37EF96EA2131EFF70029B66E /* Strings+Generated.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		37EF96EE21324E950029B66E /* ShopDetailsContainer */ = {
+			isa = PBXGroup;
+			children = (
+				37EF96EC21320ADB0029B66E /* ShopDetailsViewController.swift */,
+			);
+			path = ShopDetailsContainer;
 			sourceTree = "<group>";
 		};
 		D3EABCBD25D44B0168588162 /* Frameworks */ = {
