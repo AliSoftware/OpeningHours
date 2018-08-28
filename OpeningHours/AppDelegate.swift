@@ -80,4 +80,5 @@ func fillDummyValues() {
     ])
 
   Prefs.main.shops = [shop1, shop2, shop3]
+  Prefs.main.registerDefaults()
 }

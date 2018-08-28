@@ -23,7 +23,7 @@ class ShopCell: UITableViewCell, Reusable {
     let activeTimeRange = shop.activeTimeRange()
     if let activeTimeRange = activeTimeRange {
       let timeLeft = activeTimeRange.minutesRemaining()
-      if timeLeft <= 30 {
+      if timeLeft <= Prefs.main.closingSoonThreshold {
         statusView.backgroundColor = .orange
         nextTimeRange.text = "\(activeTimeRange) — \(L10n.shopClosingSoon(timeLeft))"
       } else {

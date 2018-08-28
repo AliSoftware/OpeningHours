@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>closingSoonThreshold</string>
+			<key>Key</key>
+			<string>closingSoonThreshold</string>
+			<key>DefaultValue</key>
+			<integer>30</integer>
+			<key>Values</key>
+			<array>
+				<integer>5</integer>
+				<integer>10</integer>
+				<integer>15</integer>
+				<integer>20</integer>
+				<integer>25</integer>
+				<integer>30</integer>
+				<integer>40</integer>
+				<integer>45</integer>
+				<integer>60</integer>
+				<integer>90</integer>
+				<integer>120</integer>
+			</array>
+			<key>Titles</key>
+			<array>
+				<string>minutes.5</string>
+				<string>minutes.10</string>
+				<string>minutes.15</string>
+				<string>minutes.20</string>
+				<string>minutes.25</string>
+				<string>minutes.30</string>
+				<string>minutes.40</string>
+				<string>minutes.45</string>
+				<string>minutes.60</string>
+				<string>minutes.90</string>
+				<string>minutes.120</string>
+			</array>
+			<key>ShortTitles</key>
+			<array>
+				<string>minutes.short.5</string>
+				<string>minutes.short.10</string>
+				<string>minutes.short.15</string>
+				<string>minutes.short.20</string>
+				<string>minutes.short.25</string>
+				<string>minutes.short.30</string>
+				<string>minutes.short.40</string>
+				<string>minutes.short.45</string>
+				<string>minutes.short.60</string>
+				<string>minutes.short.90</string>
+				<string>minutes.short.120</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>
