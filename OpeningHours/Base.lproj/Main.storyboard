@@ -76,16 +76,16 @@
             </objects>
             <point key="canvasLocation" x="1648.8" y="-382.75862068965517"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Time List View Controller-->
         <scene sceneID="4Mi-xm-7e8">
             <objects>
-                <tableViewController storyboardIdentifier="TimeList" id="mEr-aL-4ig" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TimeList" id="mEr-aL-4ig" customClass="TimeListViewController" customModule="OpeningHours" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="C5e-5e-lAg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeCell" id="L61-pG-05H">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeRowCell" id="L61-pG-05H" customClass="TimeRowCell" customModule="OpeningHours" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L61-pG-05H" id="UlZ-yN-Bvt">
@@ -106,6 +106,35 @@
                                         <constraint firstItem="xR9-ds-l68" firstAttribute="trailing" secondItem="UlZ-yN-Bvt" secondAttribute="trailingMargin" constant="5" id="ifa-pK-jit"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="timeLabel" destination="xR9-ds-l68" id="LDr-e2-5O1"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeClosedCell" id="lS8-w4-5AW" customClass="TimeClosedCell" customModule="OpeningHours" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lS8-w4-5AW" id="iYv-be-DZH">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fermé" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aZt-Ct-whK">
+                                            <rect key="frame" x="21" y="16" width="343" height="12"/>
+                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="aZt-Ct-whK" secondAttribute="bottom" constant="5" id="AcP-GV-Eal"/>
+                                        <constraint firstItem="aZt-Ct-whK" firstAttribute="trailing" secondItem="iYv-be-DZH" secondAttribute="trailingMargin" constant="5" id="VWP-gO-OFK"/>
+                                        <constraint firstItem="aZt-Ct-whK" firstAttribute="leading" secondItem="iYv-be-DZH" secondAttribute="leadingMargin" constant="5" id="c3Y-8t-H1b"/>
+                                        <constraint firstItem="aZt-Ct-whK" firstAttribute="top" secondItem="iYv-be-DZH" secondAttribute="topMargin" constant="5" id="nfH-D0-GvN"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="closedLabel" destination="aZt-Ct-whK" id="w6C-AO-fGi"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

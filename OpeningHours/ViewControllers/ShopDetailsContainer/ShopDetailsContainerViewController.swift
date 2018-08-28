@@ -48,8 +48,9 @@ class ShopDetailsContainerViewController: UIViewController {
       tableVC.timeTable = timeTable
       self.embed(viewController: tableVC)
     case 1: // List Mode
-      // TODO: Implement List View
-      print("List view not implemented yet")
+      let listVC = StoryboardScene.Main.timeList.instantiate()
+      listVC.timeTable = timeTable
+      self.embed(viewController: listVC)
     default:
       print("Unsupported view")
     }

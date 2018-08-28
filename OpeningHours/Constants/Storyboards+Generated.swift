@@ -65,7 +65,7 @@ internal enum StoryboardScene {
 
     internal static let shopsList = SceneType<OpeningHours.ShopsListViewController>(storyboard: Main.self, identifier: "ShopsList")
 
-    internal static let timeList = SceneType<UITableViewController>(storyboard: Main.self, identifier: "TimeList")
+    internal static let timeList = SceneType<OpeningHours.TimeListViewController>(storyboard: Main.self, identifier: "TimeList")
 
     internal static let timeTable = SceneType<OpeningHours.TimeTableViewController>(storyboard: Main.self, identifier: "TimeTable")
   }
