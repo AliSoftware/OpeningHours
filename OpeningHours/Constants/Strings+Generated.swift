@@ -7,6 +7,10 @@ import Foundation
 
 // swiftlint:disable explicit_type_interface identifier_name line_length nesting type_body_length type_name
 internal enum L10n {
+  /// Réouvre à %@
+  internal static func nextOpening(_ p1: String) -> String {
+    return L10n.tr("Localizable", "next_opening", p1)
+  }
   /// Fermé
   internal static let shopClosed = L10n.tr("Localizable", "shop_closed")
   /// Ferme dans %d minutes

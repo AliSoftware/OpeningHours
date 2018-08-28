@@ -32,7 +32,11 @@ class ShopCell: UITableViewCell, Reusable {
       }
     } else {
       statusView.backgroundColor = .red
-      nextTimeRange.text = L10n.shopClosed
+      if let nextOpeningRange = shop.nextTimeRange() {
+        nextTimeRange.text = "\(L10n.shopClosed) — \(L10n.nextOpening(nextOpeningRange.start.description))"
+      } else {
+        nextTimeRange.text = L10n.shopClosed
+      }
     }
   }
 }

@@ -8,5 +8,6 @@
 
 "shop_list_title" = "Enseignes";
 "shop_closed" = "Fermé";
+"next_opening" = "Réouvre à %@";
 "shop_open" = "Ouvert";
 "shop_closing_soon" = "Ferme dans %d minutes";

@@ -57,7 +57,7 @@ func fillDummyValues() {
   ]
   let ranges2: [TimeRange] = [
      9.30 - 12.00,
-    14.00 - 18.00
+    14.30 - 18.00
   ]
   let ranges3: [TimeRange] = [
     10.00 - 12.00
@@ -73,7 +73,7 @@ func fillDummyValues() {
     .monday: ranges1, .tuesday: ranges1, .wednesday: ranges2, .thursday: ranges1, .friday: ranges1, .saturday: ranges3
     ])
   let shop2 = Shop(name: "Poissonnerie Jahier", timeTable: [
-    .tuesday: ranges1, .wednesday: ranges2, .thursday: ranges1, .friday: ranges1, .saturday: ranges3, .sunday: ranges4
+    .tuesday: ranges2, .wednesday: ranges2, .thursday: ranges1, .friday: ranges1, .saturday: ranges3, .sunday: ranges4
     ])
   let shop3 = Shop(name: "Jardiland", timeTable: [
     .tuesday: ranges1, .wednesday: ranges2, .thursday: ranges1, .friday: ranges1, .saturday: ranges3, .sunday: ranges5

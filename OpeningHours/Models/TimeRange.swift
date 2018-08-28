@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TimeRange {
+struct TimeRange: Equatable {
   // MARK: - Public Properties
 
   let start: Time
