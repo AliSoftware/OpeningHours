@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ShopDetailsViewController: UIViewController {
+class ShopDetailsContainerViewController: UIViewController {
   // MARK: - IBOutlets
 
   @IBOutlet private var container: UIView!

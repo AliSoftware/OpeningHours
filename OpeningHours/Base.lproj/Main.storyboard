@@ -351,7 +351,7 @@
         <!--Container-->
         <scene sceneID="BBg-9Q-wp6">
             <objects>
-                <viewController storyboardIdentifier="ShopDetails" id="PfJ-xW-For" userLabel="Container" customClass="ShopDetailsViewController" customModule="OpeningHours" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShopDetails" id="PfJ-xW-For" userLabel="Container" customClass="ShopDetailsContainerViewController" customModule="OpeningHours" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zao-9T-QAD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
