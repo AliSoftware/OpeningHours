@@ -22,14 +22,16 @@ class ShopDetailsContainerViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    let toggleSegment = UISegmentedControl(items: [Asset.timeTableBtn.image, Asset.listBtn.image])
+    toggleSegment.addTarget(self, action: #selector(toggleView(_:)), for: .valueChanged)
+    toggleSegment.selectedSegmentIndex = 0
+
     self.navigationItem.rightBarButtonItems = [
-      // TODO: Provide some nice icons
-      UIBarButtonItem(title: "Table", style: .plain, target: self, action: #selector(showTable)),
-      UIBarButtonItem(title: "List", style: .plain, target: self, action: #selector(showList)),
-      UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(showEdit))
+      UIBarButtonItem(customView: toggleSegment),
+      UIBarButtonItem(image: Asset.editBtn.image, style: .plain, target: self, action: #selector(showEdit))
     ]
 
-    showTable()
+    toggleView(toggleSegment)
   }
 
   // MARK: - Private Properties
@@ -39,16 +41,18 @@ class ShopDetailsContainerViewController: UIViewController {
   // MARK: - Private Methods
 
   @objc
-  private func showTable() {
-    let tableVC = StoryboardScene.Main.timeTable.instantiate()
-    tableVC.timeTable = timeTable
-    self.embed(viewController: tableVC)
-  }
-
-  @objc
-  private func showList() {
-    // TODO: Implement this
-    print(#function)
+  private func toggleView(_ sender: UISegmentedControl) {
+    switch sender.selectedSegmentIndex {
+    case 0: // TimeTable Mode
+      let tableVC = StoryboardScene.Main.timeTable.instantiate()
+      tableVC.timeTable = timeTable
+      self.embed(viewController: tableVC)
+    case 1: // List Mode
+      // TODO: Implement List View
+      print("List view not implemented yet")
+    default:
+      print("Unsupported view")
+    }
   }
 
   @objc
@@ -58,6 +62,8 @@ class ShopDetailsContainerViewController: UIViewController {
   }
 
   private func embed(viewController: UIViewController) {
+    guard self.currentViewController != viewController else { return }
+
     self.currentViewController?.willMove(toParent: nil)
     self.currentViewController?.view.removeFromSuperview()
     self.currentViewController?.removeFromParent()

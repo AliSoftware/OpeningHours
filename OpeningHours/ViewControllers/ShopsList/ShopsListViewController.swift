@@ -20,7 +20,7 @@ class ShopsListViewController: UITableViewController {
 
     self.title = L10n.shopListTitle
     self.navigationItem.rightBarButtonItems = [
-      UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(toggleEditMode))
+      UIBarButtonItem(image: Asset.editBtn.image, style: .plain, target: self, action: #selector(toggleEditMode))
     ]
 
     self.refreshClock = Clock { [weak self] in

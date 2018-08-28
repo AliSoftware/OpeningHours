@@ -332,7 +332,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="timesContainerView" destination="1XW-6r-BZH" id="GrJ-WC-Fc5"/>
                         <outletCollection property="weekdayViews" destination="y2M-e2-QLF" collectionClass="NSMutableArray" id="fsi-qV-4H6"/>
@@ -375,7 +374,4 @@
             <point key="canvasLocation" x="2450" y="-383"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="second" width="30" height="30"/>
-    </resources>
 </document>
