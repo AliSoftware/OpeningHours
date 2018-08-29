@@ -28,7 +28,7 @@ class ShopDetailsContainerViewController: UIViewController {
 
     self.navigationItem.rightBarButtonItems = [
       UIBarButtonItem(customView: toggleSegment),
-      UIBarButtonItem(image: Asset.editBtn.image, style: .plain, target: self, action: #selector(showEdit))
+      UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTimeRange))
     ]
 
     toggleView(toggleSegment)
@@ -57,7 +57,7 @@ class ShopDetailsContainerViewController: UIViewController {
   }
 
   @objc
-  private func showEdit() {
+  private func addTimeRange() {
     // TODO: Implement this
     print(#function)
   }

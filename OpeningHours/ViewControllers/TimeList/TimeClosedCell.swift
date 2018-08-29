@@ -12,7 +12,7 @@ import Reusable
 class TimeClosedCell: UITableViewCell, Reusable {
   @IBOutlet var closedLabel: UILabel! {
     didSet {
-      closedLabel.text = L10n.shopClosed
+      closedLabel.text = L10n.Shop.State.closed
     }
   }
 
@@ -25,7 +25,7 @@ class TimeClosedCell: UITableViewCell, Reusable {
       ctx.setFillColor(UIColor.white.cgColor)
       ctx.fill(CGRect(origin: .zero, size: square))
       ctx.setStrokeColor(UIColor(white: 0.9, alpha: 1.0).cgColor)
-      ctx.setLineWidth(size*3/8)
+      ctx.setLineWidth(size*sqrt(2)/4)
       ctx.strokeLineSegments(between: [
         CGPoint(x: 0, y: size), CGPoint(x: size, y: 0),
         CGPoint(x: -size, y: size), CGPoint(x: size, y: -size),

@@ -25,17 +25,18 @@ class ShopCell: UITableViewCell, Reusable {
       let timeLeft = activeTimeRange.minutesRemaining()
       if timeLeft <= Prefs.main.closingSoonThreshold {
         statusView.backgroundColor = .orange
-        nextTimeRange.text = "\(activeTimeRange) — \(L10n.shopClosingSoon(timeLeft))"
+        nextTimeRange.text = "\(activeTimeRange) — \(L10n.Shop.State.closingSoon(timeLeft))"
       } else {
         statusView.backgroundColor = .green
-        nextTimeRange.text = "\(activeTimeRange) — \(L10n.shopOpen)"
+        nextTimeRange.text = "\(activeTimeRange) — \(L10n.Shop.State.open)"
       }
     } else {
       statusView.backgroundColor = .red
       if let nextOpeningRange = shop.nextTimeRange() {
-        nextTimeRange.text = "\(L10n.shopClosed) — \(L10n.nextOpening(nextOpeningRange.start.description))"
+        let nextOpening = L10n.Shop.State.nextOpening(nextOpeningRange.start.description)
+        nextTimeRange.text = "\(L10n.Shop.State.closed) — \(nextOpening)"
       } else {
-        nextTimeRange.text = L10n.shopClosed
+        nextTimeRange.text = L10n.Shop.State.closed
       }
     }
   }

@@ -18,9 +18,9 @@ class ShopsListViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    self.title = L10n.shopListTitle
+    self.title = L10n.ShopsList.title
     self.navigationItem.rightBarButtonItems = [
-      UIBarButtonItem(image: Asset.editBtn.image, style: .plain, target: self, action: #selector(toggleEditMode))
+      UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewShop))
     ]
 
     self.refreshClock = Clock { [weak self] in
@@ -50,6 +50,29 @@ class ShopsListViewController: UITableViewController {
     self.navigationController?.pushViewController(container, animated: true)
   }
 
+  override func tableView(_ tableView: UITableView,
+                          editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    let delete = UITableViewRowAction(style: .destructive, title: L10n.ShopsList.delete) { (_, indexPath) in
+      self.shops.remove(at: indexPath.row)
+      tableView.deleteRows(at: [indexPath], with: .fade)
+    }
+
+    let rename = UITableViewRowAction(style: .default, title: L10n.ShopsList.rename) { (_, indexPath) in
+      self.prompt(
+        title: L10n.Shop.Rename.Prompt.title,
+        message: L10n.Shop.Rename.Prompt.message,
+        defaultValue: self.shops[indexPath.row].name
+      ) { name in
+        guard let newName = name else { return }
+        self.shops[indexPath.row].name = newName
+        self.tableView.reloadData()
+      }
+    }
+    rename.backgroundColor = UIColor.lightGray
+
+    return [delete, rename]
+  }
+
   // MARK: - Private Properties
 
   private var refreshClock: Clock?
@@ -57,10 +80,29 @@ class ShopsListViewController: UITableViewController {
   // MARK: - Private Methods
 
   @objc
-  private func toggleEditMode() {
-//    self.tableView.isEditing = !self.tableView.isEditing
-    // TODO: Implement this
-    // Don't forget to add a "+" button
-    print(#function)
+  private func addNewShop() {
+    prompt(
+      title: L10n.Shop.New.Prompt.title,
+      message: L10n.Shop.New.Prompt.message,
+      defaultValue: L10n.Shop.New.defaultName
+    ) { name in
+      guard let shopName = name else { return }
+      let newShop = Shop(name: shopName, timeTable: [:])
+      self.shops.append(newShop)
+      Prefs.main.shops = self.shops
+      self.tableView.reloadData()
+    }
+  }
+
+  private func prompt(title: String, message: String, defaultValue: String, completion: @escaping (String?) -> Void) {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    alert.addTextField { $0.text = defaultValue }
+    alert.addAction(UIAlertAction(title: L10n.cancel, style: .cancel) { _ in
+      completion(nil)
+    })
+    alert.addAction(UIAlertAction(title: L10n.ok, style: .default) { _ in
+      completion(alert.textFields?[0].text ?? "")
+    })
+    self.present(alert, animated: true, completion: nil)
   }
 }

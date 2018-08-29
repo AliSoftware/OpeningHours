@@ -7,20 +7,59 @@ import Foundation
 
 // swiftlint:disable explicit_type_interface identifier_name line_length nesting type_body_length type_name
 internal enum L10n {
-  /// Réouvre à %@
-  internal static func nextOpening(_ p1: String) -> String {
-    return L10n.tr("Localizable", "next_opening", p1)
+  /// Annuler
+  internal static let cancel = L10n.tr("Localizable", "cancel")
+  /// OK
+  internal static let ok = L10n.tr("Localizable", "ok")
+
+  internal enum Shop {
+
+    internal enum New {
+      /// Nouveau Magasin
+      internal static let defaultName = L10n.tr("Localizable", "shop.new.default_name")
+
+      internal enum Prompt {
+        /// Nom du magasin :
+        internal static let message = L10n.tr("Localizable", "shop.new.prompt.message")
+        /// Nouveau Magasin
+        internal static let title = L10n.tr("Localizable", "shop.new.prompt.title")
+      }
+    }
+
+    internal enum Rename {
+
+      internal enum Prompt {
+        /// Nom du magasin :
+        internal static let message = L10n.tr("Localizable", "shop.rename.prompt.message")
+        /// Nouveau Magasin
+        internal static let title = L10n.tr("Localizable", "shop.rename.prompt.title")
+      }
+    }
+
+    internal enum State {
+      /// Fermé
+      internal static let closed = L10n.tr("Localizable", "shop.state.closed")
+      /// Ferme dans %d minutes
+      internal static func closingSoon(_ p1: Int) -> String {
+        return L10n.tr("Localizable", "shop.state.closing_soon", p1)
+      }
+      /// Réouvre à %@
+      internal static func nextOpening(_ p1: String) -> String {
+        return L10n.tr("Localizable", "shop.state.next_opening", p1)
+      }
+      /// Ouvert
+      internal static let `open` = L10n.tr("Localizable", "shop.state.open")
+    }
   }
-  /// Fermé
-  internal static let shopClosed = L10n.tr("Localizable", "shop_closed")
-  /// Ferme dans %d minutes
-  internal static func shopClosingSoon(_ p1: Int) -> String {
-    return L10n.tr("Localizable", "shop_closing_soon", p1)
+
+  internal enum ShopsList {
+    /// Delete
+    internal static let delete = L10n.tr("Localizable", "shops_list.delete")
+    /// Renommer
+    internal static let rename = L10n.tr("Localizable", "shops_list.rename")
+    /// Enseignes
+    internal static let title = L10n.tr("Localizable", "shops_list.title")
   }
-  /// Enseignes
-  internal static let shopListTitle = L10n.tr("Localizable", "shop_list_title")
-  /// Ouvert
-  internal static let shopOpen = L10n.tr("Localizable", "shop_open")
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length nesting type_body_length type_name
 
