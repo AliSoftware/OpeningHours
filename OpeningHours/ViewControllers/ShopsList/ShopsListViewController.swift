@@ -45,8 +45,7 @@ class ShopsListViewController: UITableViewController {
     tableView.deselectRow(at: indexPath, animated: true)
     let container = StoryboardScene.Main.shopDetails.instantiate()
     let shop = shops[indexPath.row]
-    container.title = shop.name
-    container.timeTable = shop.timeTable
+    container.shop = shop
     self.navigationController?.pushViewController(container, animated: true)
   }
 
@@ -87,9 +86,8 @@ class ShopsListViewController: UITableViewController {
       defaultValue: L10n.Shop.New.defaultName
     ) { name in
       guard let shopName = name else { return }
-      let newShop = Shop(name: shopName, timeTable: [:])
+      let newShop = Shop(name: shopName)
       self.shops.append(newShop)
-      Prefs.main.shops = self.shops
       self.tableView.reloadData()
     }
   }

@@ -10,12 +10,18 @@ import Foundation
 
 typealias TimeTable = [Weekday: [TimeRange]]
 
-struct Shop: Codable {
+class Shop: Codable {
   // MARK: - Public Properties
 
   var name: String
   var timeTable: TimeTable
 
+  // MARK: - Setup
+
+  init(name: String, timeTable: TimeTable = [:]) {
+    self.name = name
+    self.timeTable = timeTable
+  }
   // MARK: - Public Methods
 
   func activeTimeRange(on day: Weekday = .today, at time: Time = .now) -> TimeRange? {
@@ -37,5 +43,11 @@ struct Shop: Codable {
 
   func isOpen(on day: Weekday = .today, at time: Time = .now) -> Bool {
     return activeTimeRange(on: day, at: time) != nil
+  }
+}
+
+extension Shop: CustomStringConvertible {
+  var description: String {
+    return "<Shop: \(name)>"
   }
 }

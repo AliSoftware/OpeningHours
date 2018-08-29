@@ -15,12 +15,14 @@ class ShopDetailsContainerViewController: UIViewController {
 
   // MARK: - Public Properties
 
-  var timeTable: TimeTable = [:]
+  var shop: Shop!
 
   // MARK: - LifeCycle
 
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    self.title = self.shop.name
 
     let toggleSegment = UISegmentedControl(items: [Asset.timeTableBtn.image, Asset.listBtn.image])
     toggleSegment.addTarget(self, action: #selector(toggleView(_:)), for: .valueChanged)
@@ -45,11 +47,11 @@ class ShopDetailsContainerViewController: UIViewController {
     switch sender.selectedSegmentIndex {
     case 0: // TimeTable Mode
       let tableVC = StoryboardScene.Main.timeTable.instantiate()
-      tableVC.timeTable = timeTable
+      tableVC.shop = shop
       self.embed(viewController: tableVC)
     case 1: // List Mode
       let listVC = StoryboardScene.Main.timeList.instantiate()
-      listVC.timeTable = timeTable
+      listVC.shop = shop
       self.embed(viewController: listVC)
     default:
       print("Unsupported view")

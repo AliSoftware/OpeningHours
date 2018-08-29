@@ -16,14 +16,14 @@ class TimeTableViewController: UIViewController {
 
   // MARK: - Public Properties
 
-  var timeTable: TimeTable = [:]
+  var shop: Shop!
 
   // MARK: LifeCycle
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    self.configure(with: timeTable)
+    self.configure(with: self.shop.timeTable)
     self.setupUI()
 
     self.refreshClock = Clock { [weak self] in

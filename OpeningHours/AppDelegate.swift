@@ -12,15 +12,17 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
+  let shopsListVC = StoryboardScene.Main.shopsList.instantiate()
 
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
 
-    fillDummyValues()
+    Prefs.main.registerDefaults()
+
+//    fillDummyValues()
     ///
 
-    let shopsListVC = StoryboardScene.Main.shopsList.instantiate()
     shopsListVC.shops = Prefs.main.shops
 
     let window = UIWindow()
@@ -30,6 +32,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     self.window = window
 
     return true
+  }
+
+  func applicationDidEnterBackground(_ application: UIApplication) {
+    Prefs.main.shops = shopsListVC.shops
   }
 }
 
@@ -80,5 +86,4 @@ func fillDummyValues() {
     ])
 
   Prefs.main.shops = [shop1, shop2, shop3]
-  Prefs.main.registerDefaults()
 }
