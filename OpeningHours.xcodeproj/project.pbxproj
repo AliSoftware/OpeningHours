@@ -32,6 +32,8 @@
 		37EF96F9213580A90029B66E /* TimeRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96F8213580A90029B66E /* TimeRowCell.swift */; };
 		37EF96FB2135811F0029B66E /* TimeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96FA2135811F0029B66E /* TimeListViewController.swift */; };
 		37EF96FD213583FF0029B66E /* TimeClosedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96FC213583FF0029B66E /* TimeClosedCell.swift */; };
+		37EF9700213749FC0029B66E /* NewTimeRangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96FF213749FC0029B66E /* NewTimeRangeViewController.swift */; };
+		37EF970221375D020029B66E /* ShopDetailsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF970121375D020029B66E /* ShopDetailsUI.swift */; };
 		6610E071491F12550A98788D /* Pods_OpeningHours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13558D62EB517CAE5058C36D /* Pods_OpeningHours.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,8 @@
 		37EF96F8213580A90029B66E /* TimeRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRowCell.swift; sourceTree = "<group>"; };
 		37EF96FA2135811F0029B66E /* TimeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeListViewController.swift; sourceTree = "<group>"; };
 		37EF96FC213583FF0029B66E /* TimeClosedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeClosedCell.swift; sourceTree = "<group>"; };
+		37EF96FF213749FC0029B66E /* NewTimeRangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTimeRangeViewController.swift; sourceTree = "<group>"; };
+		37EF970121375D020029B66E /* ShopDetailsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailsUI.swift; sourceTree = "<group>"; };
 		DD2C403D2BD1C351FC94FE26 /* Pods-OpeningHours.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpeningHours.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpeningHours/Pods-OpeningHours.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -105,7 +109,7 @@
 				37EF96BD2131A8320029B66E /* Main.storyboard */,
 				37EF96E32131D8880029B66E /* Constants */,
 				37EF96CB2131A8920029B66E /* Models */,
-				37EF96D42131B8BF0029B66E /* Helpers */,
+				37EF96D42131B8BF0029B66E /* Common */,
 				37EF96E02131D7F10029B66E /* ViewControllers */,
 				37EF96D92131BF550029B66E /* Resources */,
 			);
@@ -123,14 +127,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		37EF96D42131B8BF0029B66E /* Helpers */ = {
+		37EF96D42131B8BF0029B66E /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				37EF96DA2131C1160029B66E /* Prefs.swift */,
 				37EF96F121325C7D0029B66E /* Clock.swift */,
 				37EF96D72131BE9E0029B66E /* ViewStyle.swift */,
+				37EF970121375D020029B66E /* ShopDetailsUI.swift */,
 			);
-			path = Helpers;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		37EF96D92131BF550029B66E /* Resources */ = {
@@ -171,6 +176,7 @@
 				37EF96EE21324E950029B66E /* ShopDetailsContainer */,
 				37EF96DF2131D2790029B66E /* TimeTable */,
 				37EF96F721357E930029B66E /* TimeList */,
+				37EF96FE213749D30029B66E /* NewTimeRange */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -201,6 +207,14 @@
 				37EF96FC213583FF0029B66E /* TimeClosedCell.swift */,
 			);
 			path = TimeList;
+			sourceTree = "<group>";
+		};
+		37EF96FE213749D30029B66E /* NewTimeRange */ = {
+			isa = PBXGroup;
+			children = (
+				37EF96FF213749FC0029B66E /* NewTimeRangeViewController.swift */,
+			);
+			path = NewTimeRange;
 			sourceTree = "<group>";
 		};
 		D3EABCBD25D44B0168588162 /* Frameworks */ = {
@@ -389,10 +403,12 @@
 				37EF96DD2131D1640029B66E /* ShopCell.swift in Sources */,
 				37EF96F9213580A90029B66E /* TimeRowCell.swift in Sources */,
 				37EF96E72131ED410029B66E /* Storyboards+Generated.swift in Sources */,
+				37EF9700213749FC0029B66E /* NewTimeRangeViewController.swift in Sources */,
 				37EF96CF2131B1160029B66E /* Time.swift in Sources */,
 				37EF96E62131ED410029B66E /* Images+Generated.swift in Sources */,
 				37EF96CD2131A8A80029B66E /* TimeRange.swift in Sources */,
 				37EF96ED21320ADB0029B66E /* ShopDetailsContainerViewController.swift in Sources */,
+				37EF970221375D020029B66E /* ShopDetailsUI.swift in Sources */,
 				37EF96BA2131A8320029B66E /* ShopsListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

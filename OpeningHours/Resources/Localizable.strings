@@ -21,5 +21,10 @@
 "shop.rename.prompt.title" = "Nouveau Magasin";
 "shop.rename.prompt.message" = "Nom du magasin :";
 
+"new_time_range.title" = "Nouveau créneau";
+"new_time_range.weekdays" = "Jours de la semaine";
+"new_time_range.startTime" = "Début";
+"new_time_range.endTime" = "Fin";
+
 "cancel" = "Annuler";
 "ok" = "OK";

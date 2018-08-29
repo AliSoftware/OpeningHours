@@ -38,7 +38,7 @@ class TimeListViewController: UITableViewController {
       return tableView.dequeueReusableCell(for: indexPath) as TimeClosedCell
     } else {
       let cell = tableView.dequeueReusableCell(for: indexPath) as TimeRowCell
-      cell.timeLabel.text = ranges[indexPath.row].description
+      cell.setup(timeRange: ranges[indexPath.row])
       return cell
     }
   }
@@ -62,5 +62,13 @@ class TimeListViewController: UITableViewController {
       tableView.reloadData()
     }
     return [delete]
+  }
+}
+
+// MARK: - ShopDetailsUI
+
+extension TimeListViewController: ShopDetailsUI {
+  func refresh() {
+    self.tableView.reloadData()
   }
 }

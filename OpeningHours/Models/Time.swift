@@ -11,8 +11,8 @@ import Foundation
 struct Time {
   // MARK: - Public Properties
 
-  let hour: Int
-  let minutes: Int
+  var hour: Int
+  var minutes: Int
 
   var totalMinutes: Int {
     return hour * 60 + minutes

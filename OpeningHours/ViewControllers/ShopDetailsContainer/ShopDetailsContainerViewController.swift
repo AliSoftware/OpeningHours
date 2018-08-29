@@ -9,9 +9,6 @@
 import UIKit
 
 class ShopDetailsContainerViewController: UIViewController {
-  // MARK: - IBOutlets
-
-  @IBOutlet private var container: UIView!
 
   // MARK: - Public Properties
 
@@ -29,43 +26,55 @@ class ShopDetailsContainerViewController: UIViewController {
     toggleSegment.selectedSegmentIndex = 0
 
     self.navigationItem.rightBarButtonItems = [
-      UIBarButtonItem(customView: toggleSegment),
-      UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTimeRange))
+      UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTimeRange)),
+      UIBarButtonItem(customView: toggleSegment)
     ]
 
     toggleView(toggleSegment)
   }
 
+  // MARK: - IBOutlets
+
+  @IBOutlet private var container: UIView!
+
   // MARK: - Private Properties
 
-  private var currentViewController: UIViewController?
+  private var currentViewController: (UIViewController & ShopDetailsUI)?
 
   // MARK: - Private Methods
 
   @objc
   private func toggleView(_ sender: UISegmentedControl) {
+    var vcToShow: UIViewController & ShopDetailsUI
     switch sender.selectedSegmentIndex {
     case 0: // TimeTable Mode
-      let tableVC = StoryboardScene.Main.timeTable.instantiate()
-      tableVC.shop = shop
-      self.embed(viewController: tableVC)
+      vcToShow = StoryboardScene.Main.timeTable.instantiate()
     case 1: // List Mode
-      let listVC = StoryboardScene.Main.timeList.instantiate()
-      listVC.shop = shop
-      self.embed(viewController: listVC)
+      vcToShow = StoryboardScene.Main.timeList.instantiate()
     default:
-      print("Unsupported view")
+      fatalError("Unsupported view")
     }
+    vcToShow.shop = shop
+    self.embed(viewController: vcToShow)
   }
 
   @objc
   private func addTimeRange() {
-    // TODO: Implement this
-    print(#function)
+    let viewCtrl = StoryboardScene.Main.newTimeRangeViewController.instantiate()
+    viewCtrl.onValidate = { weekdays, timeRange in
+      for days in weekdays {
+        var ranges = self.shop?.timeTable[days] ?? []
+        ranges.append(timeRange)
+        self.shop?.timeTable[days] = ranges
+      }
+      self.currentViewController?.refresh()
+    }
+    let navCtrl = UINavigationController(rootViewController: viewCtrl)
+    self.present(navCtrl, animated: true, completion: nil)
   }
 
-  private func embed(viewController: UIViewController) {
-    guard self.currentViewController != viewController else { return }
+  private func embed(viewController: UIViewController & ShopDetailsUI) {
+    if let currentVC = self.currentViewController, currentVC == viewController { return }
 
     self.currentViewController?.willMove(toParent: nil)
     self.currentViewController?.view.removeFromSuperview()

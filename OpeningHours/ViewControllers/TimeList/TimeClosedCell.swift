@@ -10,11 +10,8 @@ import UIKit
 import Reusable
 
 class TimeClosedCell: UITableViewCell, Reusable {
-  @IBOutlet var closedLabel: UILabel! {
-    didSet {
-      closedLabel.text = L10n.Shop.State.closed
-    }
-  }
+
+  // MARK: - LifeCycle
 
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -33,5 +30,13 @@ class TimeClosedCell: UITableViewCell, Reusable {
       ])
     }
     self.contentView.backgroundColor = UIColor(patternImage: stripesImage)
+  }
+
+  // MARK: - IBOutlets
+
+  @IBOutlet private var closedLabel: UILabel! {
+    didSet {
+      closedLabel.text = L10n.Shop.State.closed
+    }
   }
 }

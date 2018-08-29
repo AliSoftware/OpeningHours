@@ -9,10 +9,6 @@
 import UIKit
 
 class TimeTableViewController: UIViewController {
-  // MARK: - IBOutlets
-
-  @IBOutlet private var timesContainerView: UIView!
-  @IBOutlet private var weekdayViews: [WeekdayView] = []
 
   // MARK: - Public Properties
 
@@ -53,6 +49,11 @@ class TimeTableViewController: UIViewController {
     }
     super.viewDidLayoutSubviews()
   }
+
+  // MARK: - IBOutlets
+
+  @IBOutlet private var timesContainerView: UIView!
+  @IBOutlet private var weekdayViews: [WeekdayView] = []
 
   // MARK: - Private Properties
 
@@ -99,5 +100,13 @@ class TimeTableViewController: UIViewController {
     for view in self.weekdayViews {
       view.currentTime = view.tag == weekday.rawValue ? time : nil
     }
+  }
+}
+
+// MARK: - ShopDetailsUI
+
+extension TimeTableViewController: ShopDetailsUI {
+  func refresh() {
+    self.configure(with: self.shop.timeTable)
   }
 }

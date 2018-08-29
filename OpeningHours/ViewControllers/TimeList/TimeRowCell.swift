@@ -10,5 +10,14 @@ import UIKit
 import Reusable
 
 class TimeRowCell: UITableViewCell, Reusable {
-  @IBOutlet var timeLabel: UILabel!
+
+  // MARK: - Setup
+
+  func setup(timeRange: TimeRange) {
+    self.timeLabel.text = timeRange.description
+  }
+
+  // MARK: - IBOutlet
+
+  @IBOutlet private var timeLabel: UILabel!
 }

@@ -10,11 +10,6 @@ import UIKit
 import Reusable
 
 class ShopCell: UITableViewCell, Reusable {
-  // MARK: - IBOutlets
-
-  @IBOutlet var statusView: UIView!
-  @IBOutlet var shopNameLabel: UILabel!
-  @IBOutlet var nextTimeRange: UILabel!
 
   // MARK: - Public Methods
 
@@ -40,4 +35,10 @@ class ShopCell: UITableViewCell, Reusable {
       }
     }
   }
+
+  // MARK: - IBOutlets
+
+  @IBOutlet private var statusView: UIView!
+  @IBOutlet private var shopNameLabel: UILabel!
+  @IBOutlet private var nextTimeRange: UILabel!
 }

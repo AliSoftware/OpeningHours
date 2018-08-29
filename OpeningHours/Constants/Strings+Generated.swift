@@ -12,6 +12,17 @@ internal enum L10n {
   /// OK
   internal static let ok = L10n.tr("Localizable", "ok")
 
+  internal enum NewTimeRange {
+    /// Fin
+    internal static let endTime = L10n.tr("Localizable", "new_time_range.endTime")
+    /// Début
+    internal static let startTime = L10n.tr("Localizable", "new_time_range.startTime")
+    /// Nouveau créneau
+    internal static let title = L10n.tr("Localizable", "new_time_range.title")
+    /// Jours de la semaine
+    internal static let weekdays = L10n.tr("Localizable", "new_time_range.weekdays")
+  }
+
   internal enum Shop {
 
     internal enum New {

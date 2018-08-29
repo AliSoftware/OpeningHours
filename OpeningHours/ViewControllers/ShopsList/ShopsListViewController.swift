@@ -9,6 +9,7 @@
 import UIKit
 
 class ShopsListViewController: UITableViewController {
+
   // MARK: - Public Properties
 
   var shops: [Shop] = []

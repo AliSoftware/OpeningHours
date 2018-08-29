@@ -11,8 +11,8 @@ import Foundation
 struct TimeRange: Equatable {
   // MARK: - Public Properties
 
-  let start: Time
-  let end: Time
+  var start: Time
+  var end: Time
 
   var durationInMinutes: Int {
     return self.end.totalMinutes - self.start.totalMinutes
@@ -30,6 +30,10 @@ struct TimeRange: Equatable {
 // MARK: - Public Methods
 
 extension TimeRange {
+  var isValid: Bool {
+    return self.start < self.end
+  }
+
   func intersects(with other: TimeRange) -> Bool {
     return (self.start <= other.end) && (self.end >= other.start)
   }
