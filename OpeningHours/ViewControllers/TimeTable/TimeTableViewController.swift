@@ -32,8 +32,8 @@ class TimeTableViewController: UIViewController {
     let size = self.timesContainerView.bounds.size
     let step = size.height / CGFloat(self.timeViews.count - 1)
     for (idx, pair) in self.timeViews.enumerated() {
+      let top = self.weekdayViews.first?.frame.minY ?? 0
       let yPosition = CGFloat(idx) * step
-      let timeFrame = self.timesContainerView.frame
       pair.label.frame = CGRect(
         x: 0,
         y: yPosition - step/2,
@@ -41,9 +41,9 @@ class TimeTableViewController: UIViewController {
         height: step
       )
       pair.line.frame = CGRect(
-        x: timeFrame.maxX,
-        y: timeFrame.minY + yPosition,
-        width: self.view.bounds.size.width - timeFrame.maxX,
+        x: 0,
+        y: top + yPosition,
+        width: self.columnsStackView.bounds.size.width,
         height: 1
       )
     }
@@ -53,6 +53,7 @@ class TimeTableViewController: UIViewController {
   // MARK: - IBOutlets
 
   @IBOutlet private var timesContainerView: UIView!
+  @IBOutlet private var columnsStackView: UIStackView!
   @IBOutlet private var weekdayLabels: [UILabel] = []
   @IBOutlet private var weekdayViews: [WeekdayView] = []
 
@@ -89,7 +90,7 @@ class TimeTableViewController: UIViewController {
 
     for pair in self.timeViews {
       self.timesContainerView.addSubview(pair.label)
-      self.view.insertSubview(pair.line, belowSubview: self.timesContainerView)
+      self.columnsStackView.insertSubview(pair.line, at: 0)
     }
 
     for (idx, label) in self.weekdayLabels.enumerated() {
