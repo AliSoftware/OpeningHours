@@ -17,7 +17,6 @@
 
 "new_shop.prompt.title" = "New shop";
 "new_shop.prompt.message" = "Shop name:";
-"new_shop.default_name" = "New shop";
 "rename.prompt.title" = "Edit";
 "rename.prompt.message" = "Shop name:";
 

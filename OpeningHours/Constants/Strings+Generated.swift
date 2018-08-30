@@ -13,8 +13,6 @@ internal enum L10n {
   internal static let ok = L10n.tr("Localizable", "ok")
 
   internal enum NewShop {
-    /// New shop
-    internal static let defaultName = L10n.tr("Localizable", "new_shop.default_name")
 
     internal enum Prompt {
       /// Shop name:

@@ -17,7 +17,6 @@
 
 "new_shop.prompt.title" = "Nouvelle enseigne";
 "new_shop.prompt.message" = "Nom du magasin :";
-"new_shop.default_name" = "Nouveau magasin";
 "rename.prompt.title" = "Modifier";
 "rename.prompt.message" = "Nom du magasin :";
 

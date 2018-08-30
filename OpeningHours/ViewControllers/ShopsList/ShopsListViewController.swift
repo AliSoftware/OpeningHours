@@ -84,7 +84,7 @@ class ShopsListViewController: UITableViewController {
     prompt(
       title: L10n.NewShop.Prompt.title,
       message: L10n.NewShop.Prompt.message,
-      defaultValue: L10n.NewShop.defaultName
+      defaultValue: ""
     ) { name in
       guard let shopName = name else { return }
       let newShop = Shop(name: shopName)
