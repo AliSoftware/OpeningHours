@@ -31,7 +31,7 @@ class NewTimeRangeViewController: UIViewController {
       UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
     self.navigationItem.rightBarButtonItem =
       UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(validate))
-    self.navigationItem.rightBarButtonItem?.isEnabled = false
+    updateDoneButtonState()
 
     picker.selectRow(selectedTimeRange.start.hour, inComponent: 0, animated: false)
     picker.selectRow(selectedTimeRange.start.minutes/5, inComponent: 1, animated: false)
@@ -60,6 +60,10 @@ class NewTimeRangeViewController: UIViewController {
   @IBOutlet private var picker: UIPickerView!
 
   // MARK: - Private Methods
+
+  func updateDoneButtonState() {
+    self.navigationItem.rightBarButtonItem?.isEnabled = !selectedWeekdays.isEmpty && self.selectedTimeRange.isValid
+  }
 
   @objc
   private func cancel() {
@@ -94,7 +98,8 @@ extension NewTimeRangeViewController: UITableViewDataSource, UITableViewDelegate
     if !selectedWeekdays.insert(day).inserted {
       selectedWeekdays.remove(day)
     }
-    self.navigationItem.rightBarButtonItem?.isEnabled = !selectedWeekdays.isEmpty && self.selectedTimeRange.isValid
+    updateDoneButtonState()
+
     tableView.reloadData()
   }
 
@@ -146,5 +151,6 @@ extension NewTimeRangeViewController: UIPickerViewDataSource, UIPickerViewDelega
       pickerView.selectRow(self.selectedTimeRange.end.hour, inComponent: 2, animated: true)
       pickerView.selectRow(self.selectedTimeRange.end.minutes/5, inComponent: 3, animated: true)
     }
+    updateDoneButtonState()
   }
 }
