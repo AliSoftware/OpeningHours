@@ -28,6 +28,9 @@ class ShopsListViewController: UITableViewController {
     self.refreshClock = Clock { [weak self] in
       self?.tableView.reloadData() // To update open/close status on each cell
     }
+
+    // UIViewControllerPreviewingDelegate (3D Touch Peek & Pop)
+    registerForPreviewing(with: self, sourceView: self.tableView)
   }
 
   // MARK: - UITableViewDataSource
@@ -45,9 +48,7 @@ class ShopsListViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-    let container = StoryboardScene.Main.shopDetails.instantiate()
-    let shop = shops[indexPath.row]
-    container.shop = shop
+    let container = createDetailsContainer(indexPath: indexPath)
     self.navigationController?.pushViewController(container, animated: true)
   }
 
@@ -122,5 +123,30 @@ private extension ShopsListViewController {
       completion(alert.textFields?[0].text ?? "")
     })
     self.present(alert, animated: true, completion: nil)
+  }
+
+  func createDetailsContainer(indexPath: IndexPath) -> UIViewController {
+    let container = StoryboardScene.Main.shopDetails.instantiate()
+    let shop = shops[indexPath.row]
+    container.shop = shop
+    return container
+  }
+}
+
+// MARK: - UITableViewControllerPreviewingDelegate
+
+extension ShopsListViewController: UIViewControllerPreviewingDelegate {
+  public func previewingContext(_ previewingContext: UIViewControllerPreviewing,
+                                viewControllerForLocation location: CGPoint) -> UIViewController? {
+    guard let indexPath = tableView.indexPathForRow(at: location) else {
+      return nil
+    }
+    let detailViewController = createDetailsContainer(indexPath: indexPath)
+    return detailViewController
+  }
+
+  public func previewingContext(_ previewingContext: UIViewControllerPreviewing,
+                                commit viewControllerToCommit: UIViewController) {
+    navigationController?.pushViewController(viewControllerToCommit, animated: true)
   }
 }
