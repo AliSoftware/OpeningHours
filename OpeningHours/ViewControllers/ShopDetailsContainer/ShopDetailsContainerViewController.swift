@@ -23,7 +23,7 @@ class ShopDetailsContainerViewController: UIViewController {
 
     let toggleSegment = UISegmentedControl(items: [Asset.timeTableBtn.image, Asset.listBtn.image])
     toggleSegment.addTarget(self, action: #selector(toggleView(_:)), for: .valueChanged)
-    toggleSegment.selectedSegmentIndex = 0
+    toggleSegment.selectedSegmentIndex = Prefs.main.lastSelectedDetailsView
 
     self.navigationItem.rightBarButtonItems = [
       UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTimeRange)),
@@ -40,11 +40,16 @@ class ShopDetailsContainerViewController: UIViewController {
   // MARK: - Private Properties
 
   private var currentViewController: (UIViewController & ShopDetailsUI)?
+}
 
-  // MARK: - Private Methods
+// MARK: - Private Methods
+
+private extension ShopDetailsContainerViewController {
 
   @objc
-  private func toggleView(_ sender: UISegmentedControl) {
+  func toggleView(_ sender: UISegmentedControl) {
+    Prefs.main.lastSelectedDetailsView = sender.selectedSegmentIndex
+
     var vcToShow: UIViewController & ShopDetailsUI
     switch sender.selectedSegmentIndex {
     case 0: // TimeTable Mode
@@ -59,7 +64,7 @@ class ShopDetailsContainerViewController: UIViewController {
   }
 
   @objc
-  private func addTimeRange() {
+  func addTimeRange() {
     let viewCtrl = StoryboardScene.Main.newTimeRangeViewController.instantiate()
     viewCtrl.onValidate = { weekdays, timeRange in
       for days in weekdays {
@@ -73,7 +78,7 @@ class ShopDetailsContainerViewController: UIViewController {
     self.present(navCtrl, animated: true, completion: nil)
   }
 
-  private func embed(viewController: UIViewController & ShopDetailsUI) {
+  func embed(viewController: UIViewController & ShopDetailsUI) {
     if let currentVC = self.currentViewController, currentVC == viewController { return }
 
     self.currentViewController?.willMove(toParent: nil)

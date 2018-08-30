@@ -62,8 +62,12 @@ class TimeListViewController: UITableViewController {
     }
     return [delete]
   }
+}
 
-  private func weekday(for section: Int) -> Weekday {
+// MARK: - Private Methods
+
+private extension TimeListViewController {
+  func weekday(for section: Int) -> Weekday {
     return Weekday.ordered()[section]
   }
 }

@@ -49,6 +49,15 @@ struct Prefs {
     }
   }
 
+  var lastSelectedDetailsView: Int {
+    get {
+      return self.defaults.integer(forKey: Prefs.Keys.lastSelectedDetailsView)
+    }
+    nonmutating set {
+      self.defaults.set(newValue, forKey: Prefs.Keys.lastSelectedDetailsView)
+    }
+  }
+
   // MARK: - Setup
 
   init(defaults: UserDefaults) {
@@ -82,5 +91,6 @@ struct Prefs {
   private enum Keys {
     static let shops = "shops"
     static let closingSoonThreshold = "closingSoonThreshold"
+    static let lastSelectedDetailsView = "lastSelectedDetailsView"
   }
 }

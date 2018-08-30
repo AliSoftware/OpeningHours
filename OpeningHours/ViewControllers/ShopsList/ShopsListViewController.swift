@@ -77,11 +77,14 @@ class ShopsListViewController: UITableViewController {
   // MARK: - Private Properties
 
   private var refreshClock: Clock?
+}
 
-  // MARK: - Private Methods
+// MARK: - Private Methods
+
+private extension ShopsListViewController {
 
   @objc
-  private func about() {
+  func about() {
     let aboutVC = StoryboardScene.Main.about.instantiate()
     aboutVC.title = L10n.About.title
     aboutVC.navigationItem.rightBarButtonItem =
@@ -91,12 +94,12 @@ class ShopsListViewController: UITableViewController {
   }
 
   @objc
-  private func dismissAbout() {
+  func dismissAbout() {
     self.dismiss(animated: true, completion: nil)
   }
 
   @objc
-  private func addNewShop() {
+  func addNewShop() {
     prompt(
       title: L10n.NewShop.Prompt.title,
       message: L10n.NewShop.Prompt.message,
@@ -109,7 +112,7 @@ class ShopsListViewController: UITableViewController {
     }
   }
 
-  private func prompt(title: String, message: String, defaultValue: String, completion: @escaping (String?) -> Void) {
+  func prompt(title: String, message: String, defaultValue: String, completion: @escaping (String?) -> Void) {
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     alert.addTextField { $0.text = defaultValue }
     alert.addAction(UIAlertAction(title: L10n.cancel, style: .cancel) { _ in

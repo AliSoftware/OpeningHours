@@ -61,10 +61,13 @@ class TimeTableViewController: UIViewController {
 
   private var timeViews: [(label: UILabel, line: UIView)] = []
   private var refreshClock: Clock?
+}
 
-  // MARK: - Private Methods
+// MARK: - Private Methods
 
-  private func configure(with timeTable: TimeTable) {
+private extension TimeTableViewController {
+
+  func configure(with timeTable: TimeTable) {
     for (idx, view) in weekdayViews.enumerated() {
       let weekday = Weekday.ordered()[idx]
       guard let ranges = timeTable[weekday] else { continue }
@@ -72,7 +75,7 @@ class TimeTableViewController: UIViewController {
     }
   }
 
-  private func setupUI() {
+  func setupUI() {
     self.timeViews = (0...24).map { hour in
       let label = UILabel()
       label.backgroundColor = .white
@@ -102,7 +105,7 @@ class TimeTableViewController: UIViewController {
     }
   }
 
-  private func setCurrentTime(to weekday: Weekday, at time: Time) {
+  func setCurrentTime(to weekday: Weekday, at time: Time) {
     for (view, day) in zip(self.weekdayViews, Weekday.ordered()) {
       view.currentTime = day == weekday ? time : nil
     }

@@ -58,20 +58,23 @@ class NewTimeRangeViewController: UIViewController {
   }
   @IBOutlet private var tableView: UITableView!
   @IBOutlet private var picker: UIPickerView!
+}
 
-  // MARK: - Private Methods
+// MARK: - Private Methods
+
+private extension NewTimeRangeViewController {
 
   func updateDoneButtonState() {
     self.navigationItem.rightBarButtonItem?.isEnabled = !selectedWeekdays.isEmpty && self.selectedTimeRange.isValid
   }
 
   @objc
-  private func cancel() {
+  func cancel() {
     self.presentingViewController?.dismiss(animated: true, completion: nil)
   }
 
   @objc
-  private func validate() {
+  func validate() {
     self.onValidate(self.selectedWeekdays, self.selectedTimeRange)
     self.presentingViewController?.dismiss(animated: true, completion: nil)
   }
