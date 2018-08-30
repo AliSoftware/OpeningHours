@@ -17,21 +17,21 @@ class TimeListViewController: UITableViewController {
   // MARK: - UITableViewDataSource
 
   override func numberOfSections(in tableView: UITableView) -> Int {
-    return Weekday.allCases.count
+    return Weekday.ordered().count
   }
 
   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return Weekday.allCases[section].description
+    return weekday(for: section).description
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    let day = Weekday.allCases[section]
+    let day = weekday(for: section)
     let ranges = self.shop.timeTable[day] ?? []
     return ranges.isEmpty ? 1 : ranges.count // if none, show the TimeClosedCell
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let day = Weekday.allCases[indexPath.section]
+    let day = weekday(for: indexPath.section)
     let ranges = self.shop.timeTable[day] ?? []
 
     if ranges.isEmpty {
@@ -45,7 +45,7 @@ class TimeListViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView,
                           editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-    let day = Weekday.allCases[indexPath.section]
+    let day = weekday(for: indexPath.section)
     var ranges = self.shop.timeTable[day] ?? []
     guard !ranges.isEmpty else { return [] }
 
@@ -59,9 +59,12 @@ class TimeListViewController: UITableViewController {
       } else {
         tableView.deleteRows(at: [indexPath], with: .fade)
       }
-      tableView.reloadData()
     }
     return [delete]
+  }
+
+  private func weekday(for section: Int) -> Weekday {
+    return Weekday.ordered()[section]
   }
 }
 

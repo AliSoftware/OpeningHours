@@ -23,11 +23,11 @@ struct ViewStyle {
 }
 
 extension ViewStyle {
-  static let timeRange = ViewStyle(
-    backgroundColor: .yellow,
+  static let timeSlot = ViewStyle(
+    backgroundColor: UIColor(red: 0.7, green: 0.7, blue: 1.0, alpha: 0.8),
     borderColor: .black,
     borderWidth: 1,
-    cornerRadius: 2
+    cornerRadius: 3
   )
   static let lightFrame = ViewStyle(
     backgroundColor: nil,

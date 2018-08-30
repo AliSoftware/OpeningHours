@@ -7,6 +7,6 @@ storyboards:
   templateName: swift4
   output: OpeningHours/Constants/Storyboards+Generated.swift
 strings:
-  paths: OpeningHours/Resources/Localizable.strings
+  paths: OpeningHours/Resources/en.lproj/Localizable.strings
   templateName: structured-swift4
   output: OpeningHours/Constants/Strings+Generated.swift

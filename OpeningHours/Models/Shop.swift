@@ -32,13 +32,7 @@ class Shop: Codable {
     if let nextRange = timeTable[day]?.first(where: { range in range.start >= time }) {
       return nextRange
     }
-    func cycle<C: Collection>(in collection: C, after element: C.Element) -> C.Element? where C.Element: Equatable {
-      return collection.firstIndex(of: element)
-        .map(collection.index(after:))
-        .flatMap { collection.indices.contains($0) ? collection[$0] : collection.first }
-    }
-    let nextDay = cycle(in: Weekday.allCases, after: day)
-    return nextDay.flatMap { timeTable[$0]?.first }
+    return day.next.flatMap { timeTable[$0]?.first }
   }
 
   func isOpen(on day: Weekday = .today, at time: Time = .now) -> Bool {

@@ -38,9 +38,9 @@ class WeekdayView: UIView {
 
     for slotView in slotViews {
       slotView.frame = CGRect(
-        x: 0,
+        x: slotView.layer.borderWidth,
         y: CGFloat(slotView.range.start.totalMinutes) * scale,
-        width: size.width,
+        width: size.width - 2*slotView.layer.borderWidth,
         height: CGFloat(slotView.range.durationInMinutes) * scale
       )
     }
@@ -48,7 +48,7 @@ class WeekdayView: UIView {
     updateCurrentTime()
   }
 
-  // MARK: - Methods
+  // MARK: - Public Methods
 
   func configure(ranges: [TimeRange], style: ViewStyle) {
     self.slotViews.forEach { $0.removeFromSuperview() }

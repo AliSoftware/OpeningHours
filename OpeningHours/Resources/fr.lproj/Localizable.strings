@@ -8,17 +8,17 @@
 
 "shops_list.title" = "Enseignes";
 "shops_list.rename" = "Renommer";
-"shops_list.delete" = "Delete";
+"shops_list.delete" = "Supprimer";
 
 "shop.state.closed" = "Fermé";
 "shop.state.next_opening" = "Réouvre à %@";
 "shop.state.open" = "Ouvert";
 "shop.state.closing_soon" = "Ferme dans %d minutes";
 
-"shop.new.prompt.title" = "Nouveau Magasin";
+"shop.new.prompt.title" = "Nouveau magasin";
 "shop.new.prompt.message" = "Nom du magasin :";
-"shop.new.default_name" = "Nouveau Magasin";
-"shop.rename.prompt.title" = "Nouveau Magasin";
+"shop.new.default_name" = "Nouveau magasin";
+"shop.rename.prompt.title" = "Modifier";
 "shop.rename.prompt.message" = "Nom du magasin :";
 
 "new_time_range.title" = "Nouveau créneau";

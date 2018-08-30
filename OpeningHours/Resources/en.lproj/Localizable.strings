@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  OpeningHours
+
+  Created by Olivier HALLIGON on 25/08/2018.
+  Copyright © 2018 AliSoftware. All rights reserved.
+*/
+
+"shops_list.title" = "Shop";
+"shops_list.rename" = "Rename";
+"shops_list.delete" = "Delete";
+
+"shop.state.closed" = "Closed";
+"shop.state.next_opening" = "Reopens at %@";
+"shop.state.open" = "Open";
+"shop.state.closing_soon" = "Closes in %d minutes";
+
+"shop.new.prompt.title" = "New shop";
+"shop.new.prompt.message" = "Shop name:";
+"shop.new.default_name" = "New shop";
+"shop.rename.prompt.title" = "Modifier";
+"shop.rename.prompt.message" = "Shop name:";
+
+"new_time_range.title" = "New slot";
+"new_time_range.weekdays" = "Week days";
+"new_time_range.startTime" = "Start";
+"new_time_range.endTime" = "End";
+
+"cancel" = "Cancel";
+"ok" = "OK";

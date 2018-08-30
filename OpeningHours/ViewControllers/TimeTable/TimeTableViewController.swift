@@ -53,6 +53,7 @@ class TimeTableViewController: UIViewController {
   // MARK: - IBOutlets
 
   @IBOutlet private var timesContainerView: UIView!
+  @IBOutlet private var weekdayLabels: [UILabel] = []
   @IBOutlet private var weekdayViews: [WeekdayView] = []
 
   // MARK: - Private Properties
@@ -63,10 +64,10 @@ class TimeTableViewController: UIViewController {
   // MARK: - Private Methods
 
   private func configure(with timeTable: TimeTable) {
-    for view in weekdayViews {
-      guard let weekday = Weekday(rawValue: view.tag) else { continue }
+    for (idx, view) in weekdayViews.enumerated() {
+      let weekday = Weekday.ordered()[idx]
       guard let ranges = timeTable[weekday] else { continue }
-      view.configure(ranges: ranges, style: .timeRange)
+      view.configure(ranges: ranges, style: .timeSlot)
     }
   }
 
@@ -88,17 +89,21 @@ class TimeTableViewController: UIViewController {
 
     for pair in self.timeViews {
       self.timesContainerView.addSubview(pair.label)
-      self.view.addSubview(pair.line)
+      self.view.insertSubview(pair.line, belowSubview: self.timesContainerView)
     }
 
-    self.weekdayViews.forEach({
+    for (idx, label) in self.weekdayLabels.enumerated() {
+      label.text = Weekday.ordered()[idx].localizedShortName
+    }
+
+    self.weekdayViews.forEach {
       ViewStyle.lightFrame.apply(to: $0)
-    })
+    }
   }
 
   private func setCurrentTime(to weekday: Weekday, at time: Time) {
-    for view in self.weekdayViews {
-      view.currentTime = view.tag == weekday.rawValue ? time : nil
+    for (view, day) in zip(self.weekdayViews, Weekday.ordered()) {
+      view.currentTime = day == weekday ? time : nil
     }
   }
 }

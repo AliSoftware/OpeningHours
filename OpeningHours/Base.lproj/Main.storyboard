@@ -18,29 +18,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ShopCell" rowHeight="64" id="fKg-Gr-vdc" customClass="ShopCell" customModule="OpeningHours" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="64"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ShopCell" rowHeight="44" id="fKg-Gr-vdc" customClass="ShopCell" customModule="OpeningHours" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fKg-Gr-vdc" id="bOF-bA-ape">
-                                    <rect key="frame" x="0.0" y="0.0" width="341" height="63.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1rX-Of-UXF">
-                                            <rect key="frame" x="21" y="22" width="20" height="20"/>
+                                            <rect key="frame" x="16" y="9.5" width="25" height="25"/>
                                             <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="20" id="UM9-w0-aQ6"/>
-                                                <constraint firstAttribute="width" constant="20" id="gOJ-Km-j6h"/>
+                                                <constraint firstAttribute="height" constant="25" id="UM9-w0-aQ6"/>
+                                                <constraint firstAttribute="width" constant="25" id="gOJ-Km-j6h"/>
                                             </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="12"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npR-o0-1SE">
-                                            <rect key="frame" x="46" y="5" width="290" height="21"/>
+                                            <rect key="frame" x="51" y="3" width="285" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sI3-QJ-ysi">
-                                            <rect key="frame" x="46" y="31" width="290" height="27.5"/>
+                                            <rect key="frame" x="51" y="24.5" width="285" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -49,11 +54,10 @@
                                     <constraints>
                                         <constraint firstItem="npR-o0-1SE" firstAttribute="leading" secondItem="sI3-QJ-ysi" secondAttribute="leading" id="6RO-Cb-qg4"/>
                                         <constraint firstItem="sI3-QJ-ysi" firstAttribute="trailing" secondItem="npR-o0-1SE" secondAttribute="trailing" id="Djn-Ro-8aD"/>
-                                        <constraint firstItem="1rX-Of-UXF" firstAttribute="leading" secondItem="bOF-bA-ape" secondAttribute="leadingMargin" constant="5" id="GLr-0L-Tpn"/>
-                                        <constraint firstItem="npR-o0-1SE" firstAttribute="top" secondItem="bOF-bA-ape" secondAttribute="top" constant="5" id="KBR-ui-Ns9"/>
-                                        <constraint firstItem="sI3-QJ-ysi" firstAttribute="top" secondItem="npR-o0-1SE" secondAttribute="bottom" constant="5" id="XJX-Hc-r1n"/>
-                                        <constraint firstItem="npR-o0-1SE" firstAttribute="leading" secondItem="1rX-Of-UXF" secondAttribute="trailing" constant="5" id="bn6-jA-bGX"/>
-                                        <constraint firstAttribute="bottom" secondItem="sI3-QJ-ysi" secondAttribute="bottom" constant="5" id="eHB-EE-WCg"/>
+                                        <constraint firstItem="1rX-Of-UXF" firstAttribute="leading" secondItem="bOF-bA-ape" secondAttribute="leadingMargin" id="GLr-0L-Tpn"/>
+                                        <constraint firstItem="npR-o0-1SE" firstAttribute="top" secondItem="bOF-bA-ape" secondAttribute="top" constant="3" id="KBR-ui-Ns9"/>
+                                        <constraint firstItem="npR-o0-1SE" firstAttribute="leading" secondItem="1rX-Of-UXF" secondAttribute="trailing" constant="10" id="bn6-jA-bGX"/>
+                                        <constraint firstAttribute="bottom" secondItem="sI3-QJ-ysi" secondAttribute="bottom" constant="3" id="eHB-EE-WCg"/>
                                         <constraint firstItem="1rX-Of-UXF" firstAttribute="centerY" secondItem="bOF-bA-ape" secondAttribute="centerY" id="gxU-oX-042"/>
                                         <constraint firstAttribute="trailing" secondItem="npR-o0-1SE" secondAttribute="trailing" constant="5" id="rvR-KQ-dNK"/>
                                     </constraints>
@@ -93,16 +97,15 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xR9-ds-l68">
-                                            <rect key="frame" x="21" y="16" width="343" height="12"/>
+                                            <rect key="frame" x="21" y="11.5" width="343" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="xR9-ds-l68" firstAttribute="top" secondItem="UlZ-yN-Bvt" secondAttribute="topMargin" constant="5" id="AJc-io-5L6"/>
+                                        <constraint firstItem="xR9-ds-l68" firstAttribute="centerY" secondItem="UlZ-yN-Bvt" secondAttribute="centerY" id="0eZ-cJ-dkq"/>
                                         <constraint firstItem="xR9-ds-l68" firstAttribute="leading" secondItem="UlZ-yN-Bvt" secondAttribute="leadingMargin" constant="5" id="Qq2-WD-zm8"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="xR9-ds-l68" secondAttribute="bottom" constant="5" id="adT-ef-zre"/>
                                         <constraint firstItem="xR9-ds-l68" firstAttribute="trailing" secondItem="UlZ-yN-Bvt" secondAttribute="trailingMargin" constant="5" id="ifa-pK-jit"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -174,13 +177,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2M-e2-QLF" customClass="WeekdayView" customModule="OpeningHours" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2M-e2-QLF" customClass="WeekdayView" customModule="OpeningHours" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="25.5" width="49.5" height="621.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <viewLayoutGuide key="safeArea" id="oE7-G3-B7l"/>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="y2M-e2-QLF" firstAttribute="top" secondItem="DOm-fO-p8k" secondAttribute="bottom" constant="5" id="Aam-ia-zPx"/>
                                             <constraint firstItem="DOm-fO-p8k" firstAttribute="centerX" secondItem="0tn-SK-bmk" secondAttribute="centerX" id="DbP-Vx-YfD"/>
@@ -199,13 +202,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4F-7G-mWN" customClass="WeekdayView" customModule="OpeningHours" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4F-7G-mWN" customClass="WeekdayView" customModule="OpeningHours" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="25.5" width="49" height="621.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <viewLayoutGuide key="safeArea" id="BCA-eB-TOy"/>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="t4F-7G-mWN" secondAttribute="trailing" id="8M3-SP-VHy"/>
                                             <constraint firstItem="t4F-7G-mWN" firstAttribute="leading" secondItem="Ixv-ej-yI1" secondAttribute="leading" id="NDb-5J-gpZ"/>
@@ -225,13 +228,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7tP-Fw-e1p" customClass="WeekdayView" customModule="OpeningHours" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7tP-Fw-e1p" customClass="WeekdayView" customModule="OpeningHours" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="25.5" width="49.5" height="621.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <viewLayoutGuide key="safeArea" id="gdt-gJ-0EF"/>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="7tP-Fw-e1p" firstAttribute="leading" secondItem="dLD-KP-Es5" secondAttribute="leading" id="6nh-UZ-n6X"/>
                                             <constraint firstAttribute="trailing" secondItem="7tP-Fw-e1p" secondAttribute="trailing" id="diA-pc-SIP"/>
@@ -251,13 +254,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="26g-5x-md9" customClass="WeekdayView" customModule="OpeningHours" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="26g-5x-md9" customClass="WeekdayView" customModule="OpeningHours" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="25.5" width="49" height="621.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <viewLayoutGuide key="safeArea" id="H4l-sS-Cxw"/>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="26g-5x-md9" firstAttribute="leading" secondItem="7Rs-iJ-Kje" secondAttribute="leading" id="Cf7-0O-086"/>
                                             <constraint firstAttribute="bottom" secondItem="26g-5x-md9" secondAttribute="bottom" id="KvF-PM-w7c"/>
@@ -277,13 +280,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QvK-Zq-taG" customClass="WeekdayView" customModule="OpeningHours" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QvK-Zq-taG" customClass="WeekdayView" customModule="OpeningHours" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="25.5" width="49.5" height="621.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <viewLayoutGuide key="safeArea" id="qlD-jJ-pOe"/>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="QvK-Zq-taG" firstAttribute="top" secondItem="DED-YC-Gjd" secondAttribute="bottom" constant="5" id="2ef-K4-E76"/>
                                             <constraint firstItem="DED-YC-Gjd" firstAttribute="top" secondItem="Ywd-0l-Z7s" secondAttribute="top" id="2lg-Ae-nvv"/>
@@ -303,13 +306,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view tag="7" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="69w-SC-AfR" customClass="WeekdayView" customModule="OpeningHours" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="69w-SC-AfR" customClass="WeekdayView" customModule="OpeningHours" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="25.5" width="49" height="621.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <viewLayoutGuide key="safeArea" id="zQD-1k-8JJ"/>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="69w-SC-AfR" firstAttribute="leading" secondItem="z6P-w2-N7A" secondAttribute="leading" id="3yo-vt-zOT"/>
                                             <constraint firstItem="Cwm-U8-cPT" firstAttribute="top" secondItem="z6P-w2-N7A" secondAttribute="top" id="Axd-GD-vJz"/>
@@ -329,13 +332,13 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMm-J6-NuV" customClass="WeekdayView" customModule="OpeningHours" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMm-J6-NuV" customClass="WeekdayView" customModule="OpeningHours" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="25.5" width="49.5" height="621.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <viewLayoutGuide key="safeArea" id="6gR-3b-O94"/>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="MaF-qe-UvL" firstAttribute="centerX" secondItem="Bwr-Oc-4rV" secondAttribute="centerX" id="23g-VS-fGn"/>
                                             <constraint firstItem="MaF-qe-UvL" firstAttribute="top" secondItem="Bwr-Oc-4rV" secondAttribute="top" id="Ewe-GK-gRw"/>
@@ -370,6 +373,13 @@
                         <outletCollection property="weekdayViews" destination="QvK-Zq-taG" collectionClass="NSMutableArray" id="eoj-FH-97k"/>
                         <outletCollection property="weekdayViews" destination="69w-SC-AfR" collectionClass="NSMutableArray" id="yR6-61-d8P"/>
                         <outletCollection property="weekdayViews" destination="hMm-J6-NuV" collectionClass="NSMutableArray" id="fyZ-cW-ILI"/>
+                        <outletCollection property="weekdayLabels" destination="DOm-fO-p8k" collectionClass="NSMutableArray" id="s8b-2p-pUg"/>
+                        <outletCollection property="weekdayLabels" destination="oXv-MO-NB4" collectionClass="NSMutableArray" id="3V1-zn-jxr"/>
+                        <outletCollection property="weekdayLabels" destination="euO-R2-3hE" collectionClass="NSMutableArray" id="udi-1D-0f1"/>
+                        <outletCollection property="weekdayLabels" destination="mQv-zI-5vU" collectionClass="NSMutableArray" id="3Vw-Ac-xqv"/>
+                        <outletCollection property="weekdayLabels" destination="DED-YC-Gjd" collectionClass="NSMutableArray" id="6nG-Jp-qJl"/>
+                        <outletCollection property="weekdayLabels" destination="Cwm-U8-cPT" collectionClass="NSMutableArray" id="U6f-O3-qld"/>
+                        <outletCollection property="weekdayLabels" destination="MaF-qe-UvL" collectionClass="NSMutableArray" id="zCh-pB-sC9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

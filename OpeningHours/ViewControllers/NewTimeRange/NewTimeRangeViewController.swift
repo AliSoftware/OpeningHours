@@ -77,12 +77,12 @@ class NewTimeRangeViewController: UIViewController {
 
 extension NewTimeRangeViewController: UITableViewDataSource, UITableViewDelegate {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return Weekday.allCases.count
+    return Weekday.ordered().count
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = UITableViewCell()
-    let day = Weekday.allCases[indexPath.row]
+    let day = weekday(for: indexPath.row)
     cell.textLabel?.text = day.description
     cell.accessoryType = selectedWeekdays.contains(day) ? .checkmark : .none
     return cell
@@ -90,12 +90,16 @@ extension NewTimeRangeViewController: UITableViewDataSource, UITableViewDelegate
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-    let day = Weekday.allCases[indexPath.row]
+    let day = weekday(for: indexPath.row)
     if !selectedWeekdays.insert(day).inserted {
       selectedWeekdays.remove(day)
     }
     self.navigationItem.rightBarButtonItem?.isEnabled = !selectedWeekdays.isEmpty && self.selectedTimeRange.isValid
     tableView.reloadData()
+  }
+
+  private func weekday(for row: Int) -> Weekday {
+    return Weekday.ordered()[row]
   }
 }
 

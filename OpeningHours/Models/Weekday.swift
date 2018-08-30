@@ -38,11 +38,43 @@ enum Weekday: Int, CaseIterable, Codable {
 // MARK: - CustomStringConvertible
 
 extension Weekday: CustomStringConvertible {
-  var description: String {
+  var localizedName: String {
     let cal = Calendar.current
-    guard cal.weekdaySymbols.count == Weekday.allCases.count else {
+    guard cal.standaloneWeekdaySymbols.count == Weekday.allCases.count else {
       return "Unsupported calendar"
     }
-    return cal.weekdaySymbols[self.rawValue - 1]
+    return cal.standaloneWeekdaySymbols[self.rawValue - 1].capitalized
   }
+  var localizedShortName: String {
+    let cal = Calendar.current
+    guard cal.shortStandaloneWeekdaySymbols.count == Weekday.allCases.count else {
+      return "Unsupported calendar"
+    }
+    return cal.shortStandaloneWeekdaySymbols[self.rawValue - 1].capitalized
+  }
+  var description: String {
+    return localizedName
+  }
+}
+
+// MARK: -
+
+extension Weekday {
+  /// Ordered list of all days according to a given calendar
+  static func ordered(calendar: Calendar = .current) -> Weekday.AllCases {
+    guard let firstDay = Weekday(rawValue: calendar.firstWeekday) else {
+      return allCases
+    }
+    let all = Weekday.allCases
+    let firstIdx = all.firstIndex(of: firstDay) ?? all.startIndex
+    return Array(all[firstIdx..<all.endIndex] + all[all.startIndex..<firstIdx])
+  }
+
+  var next: Weekday! {
+    let all = Weekday.allCases
+    return all.firstIndex(of: self)
+      .map(all.index(after:))
+      .flatMap { all.indices.contains($0) ? all[$0] : all.first }
+  }
+
 }
