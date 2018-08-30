@@ -15,7 +15,7 @@ class ShopCell: UITableViewCell, Reusable {
 
   func setup(shop: Shop) {
     shopNameLabel.text = shop.name
-    let activeTimeRange = shop.activeTimeRange()
+    let activeTimeRange = shop.timeTable.activeTimeRange()
     if let activeTimeRange = activeTimeRange {
       let timeLeft = activeTimeRange.minutesRemaining()
       if timeLeft <= Prefs.main.closingSoonThreshold {
@@ -27,7 +27,7 @@ class ShopCell: UITableViewCell, Reusable {
       }
     } else {
       statusView.backgroundColor = .red
-      if let nextOpeningRange = shop.nextTimeRange() {
+      if let nextOpeningRange = shop.timeTable.nextTimeRange() {
         let nextOpening = L10n.ShopState.nextOpening(nextOpeningRange.start.description)
         nextTimeRange.text = "\(L10n.ShopState.closed) — \(nextOpening)"
       } else {

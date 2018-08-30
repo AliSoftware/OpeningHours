@@ -8,8 +8,6 @@
 
 import Foundation
 
-typealias TimeTable = [Weekday: [TimeRange]]
-
 class Shop: Codable {
   // MARK: - Public Properties
 
@@ -18,25 +16,15 @@ class Shop: Codable {
 
   // MARK: - Setup
 
-  init(name: String, timeTable: TimeTable = [:]) {
+  init(name: String, timeTable: TimeTable = TimeTable()) {
     self.name = name
     self.timeTable = timeTable
   }
+
   // MARK: - Public Methods
 
-  func activeTimeRange(on day: Weekday = .today, at time: Time = .now) -> TimeRange? {
-    return timeTable[day]?.first(where: { range in range.contains(time) })
-  }
-
-  func nextTimeRange(on day: Weekday = .today, at time: Time = .now) -> TimeRange? {
-    if let nextRange = timeTable[day]?.first(where: { range in range.start >= time }) {
-      return nextRange
-    }
-    return day.next.flatMap { timeTable[$0]?.first }
-  }
-
   func isOpen(on day: Weekday = .today, at time: Time = .now) -> Bool {
-    return activeTimeRange(on: day, at: time) != nil
+    return self.timeTable.activeTimeRange(on: day, at: time) != nil
   }
 }
 

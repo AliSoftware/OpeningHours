@@ -67,10 +67,8 @@ private extension ShopDetailsContainerViewController {
   func addTimeRange() {
     let viewCtrl = StoryboardScene.Main.newTimeRangeViewController.instantiate()
     viewCtrl.onValidate = { weekdays, timeRange in
-      for days in weekdays {
-        var ranges = self.shop?.timeTable[days] ?? []
-        ranges.append(timeRange)
-        self.shop?.timeTable[days] = ranges
+      for day in weekdays {
+        self.shop?.timeTable.add(range: timeRange, for: day)
       }
       self.currentViewController?.refresh()
     }

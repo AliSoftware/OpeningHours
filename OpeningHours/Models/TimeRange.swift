@@ -14,10 +14,6 @@ struct TimeRange: Equatable {
   var start: Time
   var end: Time
 
-  var durationInMinutes: Int {
-    return self.end.totalMinutes - self.start.totalMinutes
-  }
-
   // MARK: - Setup
 
   init(start: Time, end: Time) {
@@ -30,6 +26,10 @@ struct TimeRange: Equatable {
 // MARK: - Public Methods
 
 extension TimeRange {
+  var durationInMinutes: Int {
+    return self.end.totalMinutes - self.start.totalMinutes
+  }
+
   var isValid: Bool {
     return self.start < self.end
   }
@@ -40,6 +40,10 @@ extension TimeRange {
 
   func contains(_ time: Time) -> Bool {
     return start <= time && time <= end
+  }
+
+  static func ~= (range: TimeRange, time: Time) -> Bool {
+    return range.contains(time)
   }
 
   func minutesRemaining(at time: Time = .now) -> Int {

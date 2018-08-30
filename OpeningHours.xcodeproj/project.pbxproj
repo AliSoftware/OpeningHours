@@ -34,6 +34,7 @@
 		37EF9700213749FC0029B66E /* NewTimeRangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96FF213749FC0029B66E /* NewTimeRangeViewController.swift */; };
 		37EF970221375D020029B66E /* ShopDetailsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF970121375D020029B66E /* ShopDetailsUI.swift */; };
 		37EF970321376A7D0029B66E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37EF970521376A7D0029B66E /* Localizable.strings */; };
+		37EF97082137E8370029B66E /* TimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF97072137E8370029B66E /* TimeTable.swift */; };
 		6610E071491F12550A98788D /* Pods_OpeningHours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13558D62EB517CAE5058C36D /* Pods_OpeningHours.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		37EF970121375D020029B66E /* ShopDetailsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailsUI.swift; sourceTree = "<group>"; };
 		37EF970421376A7D0029B66E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		37EF970621376ACF0029B66E /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		37EF97072137E8370029B66E /* TimeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTable.swift; sourceTree = "<group>"; };
 		DD2C403D2BD1C351FC94FE26 /* Pods-OpeningHours.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpeningHours.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpeningHours/Pods-OpeningHours.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +125,7 @@
 				37EF96CE2131B1160029B66E /* Time.swift */,
 				37EF96CC2131A8A80029B66E /* TimeRange.swift */,
 				37EF96D02131B1290029B66E /* Weekday.swift */,
+				37EF97072137E8370029B66E /* TimeTable.swift */,
 				37EF96D22131B13F0029B66E /* Shop.swift */,
 			);
 			path = Models;
@@ -390,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37EF97082137E8370029B66E /* TimeTable.swift in Sources */,
 				37EF96D82131BE9E0029B66E /* ViewStyle.swift in Sources */,
 				37EF96BC2131A8320029B66E /* TimeTableViewController.swift in Sources */,
 				37EF96D62131B9280029B66E /* WeekdayView.swift in Sources */,

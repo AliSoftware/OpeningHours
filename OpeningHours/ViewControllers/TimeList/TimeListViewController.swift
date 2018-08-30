@@ -26,13 +26,13 @@ class TimeListViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     let day = weekday(for: section)
-    let ranges = self.shop.timeTable[day] ?? []
+    let ranges = self.shop.timeTable[day]
     return ranges.isEmpty ? 1 : ranges.count // if none, show the TimeClosedCell
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let day = weekday(for: indexPath.section)
-    let ranges = self.shop.timeTable[day] ?? []
+    let ranges = self.shop.timeTable[day]
 
     if ranges.isEmpty {
       return tableView.dequeueReusableCell(for: indexPath) as TimeClosedCell
@@ -46,7 +46,7 @@ class TimeListViewController: UITableViewController {
   override func tableView(_ tableView: UITableView,
                           editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
     let day = weekday(for: indexPath.section)
-    var ranges = self.shop.timeTable[day] ?? []
+    var ranges = self.shop.timeTable[day]
     guard !ranges.isEmpty else { return [] }
 
     let delete = UITableViewRowAction(style: .destructive, title: L10n.ShopsList.delete) { (_, indexPath) in

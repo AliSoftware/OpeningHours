@@ -70,8 +70,7 @@ private extension TimeTableViewController {
   func configure(with timeTable: TimeTable) {
     for (idx, view) in weekdayViews.enumerated() {
       let weekday = Weekday.ordered()[idx]
-      guard let ranges = timeTable[weekday] else { continue }
-      view.configure(ranges: ranges, style: .timeSlot)
+      view.configure(ranges: timeTable[weekday], style: .timeSlot)
     }
   }
 
