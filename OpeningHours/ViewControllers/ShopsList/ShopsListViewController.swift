@@ -33,6 +33,11 @@ class ShopsListViewController: UITableViewController {
     registerForPreviewing(with: self, sourceView: self.tableView)
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.tableView.reloadData() // To update open/close status on each cell in case it was edited since
+  }
+
   // MARK: - UITableViewDataSource
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
