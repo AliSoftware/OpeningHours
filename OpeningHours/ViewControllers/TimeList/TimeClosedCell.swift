@@ -36,7 +36,7 @@ class TimeClosedCell: UITableViewCell, Reusable {
 
   @IBOutlet private var closedLabel: UILabel! {
     didSet {
-      closedLabel.text = L10n.Shop.State.closed
+      closedLabel.text = L10n.ShopState.closed
     }
   }
 }

@@ -59,8 +59,8 @@ class ShopsListViewController: UITableViewController {
 
     let rename = UITableViewRowAction(style: .default, title: L10n.ShopsList.rename) { (_, indexPath) in
       self.prompt(
-        title: L10n.Shop.Rename.Prompt.title,
-        message: L10n.Shop.Rename.Prompt.message,
+        title: L10n.Rename.Prompt.title,
+        message: L10n.Rename.Prompt.message,
         defaultValue: self.shops[indexPath.row].name
       ) { name in
         guard let newName = name else { return }
@@ -82,9 +82,9 @@ class ShopsListViewController: UITableViewController {
   @objc
   private func addNewShop() {
     prompt(
-      title: L10n.Shop.New.Prompt.title,
-      message: L10n.Shop.New.Prompt.message,
-      defaultValue: L10n.Shop.New.defaultName
+      title: L10n.NewShop.Prompt.title,
+      message: L10n.NewShop.Prompt.message,
+      defaultValue: L10n.NewShop.defaultName
     ) { name in
       guard let shopName = name else { return }
       let newShop = Shop(name: shopName)

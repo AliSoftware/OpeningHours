@@ -12,6 +12,18 @@ internal enum L10n {
   /// OK
   internal static let ok = L10n.tr("Localizable", "ok")
 
+  internal enum NewShop {
+    /// New shop
+    internal static let defaultName = L10n.tr("Localizable", "new_shop.default_name")
+
+    internal enum Prompt {
+      /// Shop name:
+      internal static let message = L10n.tr("Localizable", "new_shop.prompt.message")
+      /// New shop
+      internal static let title = L10n.tr("Localizable", "new_shop.prompt.title")
+    }
+  }
+
   internal enum NewTimeRange {
     /// End
     internal static let endTime = L10n.tr("Localizable", "new_time_range.endTime")
@@ -23,44 +35,29 @@ internal enum L10n {
     internal static let weekdays = L10n.tr("Localizable", "new_time_range.weekdays")
   }
 
-  internal enum Shop {
+  internal enum Rename {
 
-    internal enum New {
-      /// New shop
-      internal static let defaultName = L10n.tr("Localizable", "shop.new.default_name")
-
-      internal enum Prompt {
-        /// Shop name:
-        internal static let message = L10n.tr("Localizable", "shop.new.prompt.message")
-        /// New shop
-        internal static let title = L10n.tr("Localizable", "shop.new.prompt.title")
-      }
+    internal enum Prompt {
+      /// Shop name:
+      internal static let message = L10n.tr("Localizable", "rename.prompt.message")
+      /// Edit
+      internal static let title = L10n.tr("Localizable", "rename.prompt.title")
     }
+  }
 
-    internal enum Rename {
-
-      internal enum Prompt {
-        /// Shop name:
-        internal static let message = L10n.tr("Localizable", "shop.rename.prompt.message")
-        /// Modifier
-        internal static let title = L10n.tr("Localizable", "shop.rename.prompt.title")
-      }
+  internal enum ShopState {
+    /// Closed
+    internal static let closed = L10n.tr("Localizable", "shop_state.closed")
+    /// Closes in %d minutes
+    internal static func closingSoon(_ p1: Int) -> String {
+      return L10n.tr("Localizable", "shop_state.closing_soon", p1)
     }
-
-    internal enum State {
-      /// Closed
-      internal static let closed = L10n.tr("Localizable", "shop.state.closed")
-      /// Closes in %d minutes
-      internal static func closingSoon(_ p1: Int) -> String {
-        return L10n.tr("Localizable", "shop.state.closing_soon", p1)
-      }
-      /// Reopens at %@
-      internal static func nextOpening(_ p1: String) -> String {
-        return L10n.tr("Localizable", "shop.state.next_opening", p1)
-      }
-      /// Open
-      internal static let `open` = L10n.tr("Localizable", "shop.state.open")
+    /// Reopens at %@
+    internal static func nextOpening(_ p1: String) -> String {
+      return L10n.tr("Localizable", "shop_state.next_opening", p1)
     }
+    /// Open
+    internal static let `open` = L10n.tr("Localizable", "shop_state.open")
   }
 
   internal enum ShopsList {

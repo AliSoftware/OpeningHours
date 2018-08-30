@@ -10,16 +10,16 @@
 "shops_list.rename" = "Rename";
 "shops_list.delete" = "Delete";
 
-"shop.state.closed" = "Closed";
-"shop.state.next_opening" = "Reopens at %@";
-"shop.state.open" = "Open";
-"shop.state.closing_soon" = "Closes in %d minutes";
+"shop_state.closed" = "Closed";
+"shop_state.next_opening" = "Reopens at %@";
+"shop_state.open" = "Open";
+"shop_state.closing_soon" = "Closes in %d minutes";
 
-"shop.new.prompt.title" = "New shop";
-"shop.new.prompt.message" = "Shop name:";
-"shop.new.default_name" = "New shop";
-"shop.rename.prompt.title" = "Modifier";
-"shop.rename.prompt.message" = "Shop name:";
+"new_shop.prompt.title" = "New shop";
+"new_shop.prompt.message" = "Shop name:";
+"new_shop.default_name" = "New shop";
+"rename.prompt.title" = "Edit";
+"rename.prompt.message" = "Shop name:";
 
 "new_time_range.title" = "New slot";
 "new_time_range.weekdays" = "Week days";
