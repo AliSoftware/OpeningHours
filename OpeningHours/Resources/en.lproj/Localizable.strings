@@ -6,6 +6,9 @@
   Copyright © 2018 AliSoftware. All rights reserved.
 */
 
+"about.button" = "ⓘ";
+"about.title" = "About";
+
 "shops_list.title" = "Shop";
 "shops_list.rename" = "Rename";
 "shops_list.delete" = "Delete";

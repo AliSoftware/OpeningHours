@@ -20,9 +20,10 @@ class ShopsListViewController: UITableViewController {
     super.viewDidLoad()
 
     self.title = L10n.ShopsList.title
-    self.navigationItem.rightBarButtonItems = [
+    self.navigationItem.leftBarButtonItem =
+      UIBarButtonItem(title: L10n.About.button, style: .plain, target: self, action: #selector(about))
+    self.navigationItem.rightBarButtonItem =
       UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewShop))
-    ]
 
     self.refreshClock = Clock { [weak self] in
       self?.tableView.reloadData() // To update open/close status on each cell
@@ -78,6 +79,21 @@ class ShopsListViewController: UITableViewController {
   private var refreshClock: Clock?
 
   // MARK: - Private Methods
+
+  @objc
+  private func about() {
+    let aboutVC = StoryboardScene.Main.about.instantiate()
+    aboutVC.title = L10n.About.title
+    aboutVC.navigationItem.rightBarButtonItem =
+      UIBarButtonItem(title: L10n.ok, style: .plain, target: self, action: #selector(dismissAbout))
+    let navCtrl = UINavigationController(rootViewController: aboutVC)
+    self.present(navCtrl, animated: true, completion: nil)
+  }
+
+  @objc
+  private func dismissAbout() {
+    self.dismiss(animated: true, completion: nil)
+  }
 
   @objc
   private func addNewShop() {

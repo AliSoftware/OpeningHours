@@ -12,6 +12,13 @@ internal enum L10n {
   /// OK
   internal static let ok = L10n.tr("Localizable", "ok")
 
+  internal enum About {
+    /// ⓘ
+    internal static let button = L10n.tr("Localizable", "about.button")
+    /// About
+    internal static let title = L10n.tr("Localizable", "about.title")
+  }
+
   internal enum NewShop {
 
     internal enum Prompt {
