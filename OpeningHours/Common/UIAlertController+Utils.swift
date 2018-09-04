@@ -9,7 +9,12 @@
 import UIKit
 
 extension UIAlertController {
-  static func confirm(title: String, message: String, destructive: Bool = false, completion: @escaping (Bool) -> Void) -> UIAlertController {
+  static func confirm(
+    title: String,
+    message: String,
+    destructive: Bool = false,
+    completion: @escaping (Bool) -> Void
+  ) -> UIAlertController {
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: L10n.cancel, style: .cancel) { _ in
       completion(false)
@@ -20,7 +25,12 @@ extension UIAlertController {
     return alert
   }
 
-  static func prompt(title: String, message: String, defaultValue: String, completion: @escaping (String?) -> Void) -> UIAlertController {
+  static func prompt(
+    title: String,
+    message: String,
+    defaultValue: String,
+    completion: @escaping (String?) -> Void
+  ) -> UIAlertController {
     let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     alert.addTextField { $0.text = defaultValue }
     alert.addAction(UIAlertAction(title: L10n.cancel, style: .cancel) { _ in

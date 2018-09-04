@@ -25,7 +25,7 @@ struct TimeTable: Codable {
   mutating func add(range: TimeRange, for day: Weekday) {
     var ranges = self.table[day] ?? []
     ranges.append(range)
-    self.table[day] = ranges
+    self.table[day] = ranges.sorted { ($0.start, $0.end) < ($1.start, $1.end) }
   }
 
   subscript(_ day: Weekday) -> [TimeRange] {
