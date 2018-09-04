@@ -13,11 +13,15 @@ class TimeRowCell: UITableViewCell, Reusable {
 
   // MARK: - Setup
 
-  func setup(timeRange: TimeRange) {
+  func setup(day: Weekday, timeRange: TimeRange) {
     self.timeLabel.text = timeRange.description
+    let isActive = day == .today && timeRange.contains(.now)
+    self.activeIndicator.isHidden = !isActive
+    self.contentView.backgroundColor = isActive ? UIColor.green.withAlphaComponent(0.1) : .white
   }
 
   // MARK: - IBOutlet
 
   @IBOutlet private var timeLabel: UILabel!
+  @IBOutlet private var activeIndicator: UIView!
 }

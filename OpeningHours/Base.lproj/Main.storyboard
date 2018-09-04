@@ -55,11 +55,12 @@
                                     <constraints>
                                         <constraint firstItem="npR-o0-1SE" firstAttribute="leading" secondItem="sI3-QJ-ysi" secondAttribute="leading" id="6RO-Cb-qg4"/>
                                         <constraint firstItem="sI3-QJ-ysi" firstAttribute="trailing" secondItem="npR-o0-1SE" secondAttribute="trailing" id="Djn-Ro-8aD"/>
-                                        <constraint firstItem="1rX-Of-UXF" firstAttribute="leading" secondItem="bOF-bA-ape" secondAttribute="leadingMargin" id="GLr-0L-Tpn"/>
+                                        <constraint firstItem="1rX-Of-UXF" firstAttribute="leading" secondItem="bOF-bA-ape" secondAttribute="leading" id="GLr-0L-Tpn"/>
                                         <constraint firstItem="npR-o0-1SE" firstAttribute="top" secondItem="bOF-bA-ape" secondAttribute="top" constant="3" id="KBR-ui-Ns9"/>
+                                        <constraint firstItem="1rX-Of-UXF" firstAttribute="top" secondItem="bOF-bA-ape" secondAttribute="top" id="WKf-3e-adY"/>
                                         <constraint firstItem="npR-o0-1SE" firstAttribute="leading" secondItem="1rX-Of-UXF" secondAttribute="trailing" constant="10" id="bn6-jA-bGX"/>
                                         <constraint firstAttribute="bottom" secondItem="sI3-QJ-ysi" secondAttribute="bottom" constant="3" id="eHB-EE-WCg"/>
-                                        <constraint firstItem="1rX-Of-UXF" firstAttribute="centerY" secondItem="bOF-bA-ape" secondAttribute="centerY" id="gxU-oX-042"/>
+                                        <constraint firstAttribute="bottom" secondItem="1rX-Of-UXF" secondAttribute="bottom" id="nnf-1Z-l75"/>
                                         <constraint firstAttribute="trailing" secondItem="npR-o0-1SE" secondAttribute="trailing" constant="5" id="rvR-KQ-dNK"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -97,8 +98,15 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ActiveTimeSlot" translatesAutoresizingMaskIntoConstraints="NO" id="m1f-vb-nyB">
+                                            <rect key="frame" x="5" y="6" width="32" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="32" id="SFN-lw-Pu1"/>
+                                                <constraint firstAttribute="width" secondItem="m1f-vb-nyB" secondAttribute="height" multiplier="1:1" id="hlz-e5-veR"/>
+                                            </constraints>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xR9-ds-l68">
-                                            <rect key="frame" x="21" y="11.5" width="343" height="20.5"/>
+                                            <rect key="frame" x="57" y="11.5" width="307" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -106,11 +114,16 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="xR9-ds-l68" firstAttribute="centerY" secondItem="UlZ-yN-Bvt" secondAttribute="centerY" id="0eZ-cJ-dkq"/>
-                                        <constraint firstItem="xR9-ds-l68" firstAttribute="leading" secondItem="UlZ-yN-Bvt" secondAttribute="leadingMargin" constant="5" id="Qq2-WD-zm8"/>
+                                        <constraint firstItem="m1f-vb-nyB" firstAttribute="centerY" secondItem="xR9-ds-l68" secondAttribute="centerY" id="Tcp-Um-ZVG"/>
+                                        <constraint firstItem="xR9-ds-l68" firstAttribute="leading" secondItem="m1f-vb-nyB" secondAttribute="trailing" constant="20" id="b3F-Up-jMi"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="m1f-vb-nyB" secondAttribute="bottom" priority="750" constant="5" id="cYw-3K-7fe"/>
+                                        <constraint firstItem="m1f-vb-nyB" firstAttribute="leading" secondItem="UlZ-yN-Bvt" secondAttribute="leading" constant="5" id="fNg-yq-nDe"/>
                                         <constraint firstItem="xR9-ds-l68" firstAttribute="trailing" secondItem="UlZ-yN-Bvt" secondAttribute="trailingMargin" constant="5" id="ifa-pK-jit"/>
+                                        <constraint firstItem="m1f-vb-nyB" firstAttribute="top" relation="greaterThanOrEqual" secondItem="UlZ-yN-Bvt" secondAttribute="top" priority="750" constant="5" id="xzH-g6-8aC"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="activeIndicator" destination="m1f-vb-nyB" id="65h-Jk-4nP"/>
                                     <outlet property="timeLabel" destination="xR9-ds-l68" id="LDr-e2-5O1"/>
                                 </connections>
                             </tableViewCell>
@@ -545,6 +558,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ActiveTimeSlot" width="64" height="64"/>
         <image name="Logo" width="341" height="341"/>
     </resources>
 </document>

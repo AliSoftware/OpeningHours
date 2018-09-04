@@ -14,6 +14,21 @@ class TimeListViewController: UITableViewController {
 
   var shop: Shop!
 
+  // MARK: - LifeCycle
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+
+    if
+      let dayIndex = Weekday.ordered().index(of: .today),
+      let activeRange = self.shop.timeTable.activeTimeRange(),
+      let rangeIndex = self.shop.timeTable[.today].index(of: activeRange)
+    {
+      let indexPath = IndexPath(row: rangeIndex, section: dayIndex)
+      self.tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
+    }
+  }
+
   // MARK: - UITableViewDataSource
 
   override func numberOfSections(in tableView: UITableView) -> Int {
@@ -38,7 +53,7 @@ class TimeListViewController: UITableViewController {
       return tableView.dequeueReusableCell(for: indexPath) as TimeClosedCell
     } else {
       let cell = tableView.dequeueReusableCell(for: indexPath) as TimeRowCell
-      cell.setup(timeRange: ranges[indexPath.row])
+      cell.setup(day: day, timeRange: ranges[indexPath.row])
       return cell
     }
   }
