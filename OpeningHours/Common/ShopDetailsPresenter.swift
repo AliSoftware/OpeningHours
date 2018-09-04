@@ -6,7 +6,7 @@
 //  Copyright © 2018 AliSoftware. All rights reserved.
 //
 
-protocol ShopDetailsUI {
+protocol ShopDetailsPresenter {
   var shop: Shop! { get set }
   func refresh()
 }

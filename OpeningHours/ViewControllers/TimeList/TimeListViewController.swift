@@ -74,7 +74,7 @@ private extension TimeListViewController {
 
 // MARK: - ShopDetailsUI
 
-extension TimeListViewController: ShopDetailsUI {
+extension TimeListViewController: ShopDetailsPresenter {
   func refresh() {
     self.tableView.reloadData()
   }

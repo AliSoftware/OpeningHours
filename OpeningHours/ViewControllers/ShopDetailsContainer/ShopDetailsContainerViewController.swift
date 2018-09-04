@@ -39,7 +39,7 @@ class ShopDetailsContainerViewController: UIViewController {
 
   // MARK: - Private Properties
 
-  private var currentViewController: (UIViewController & ShopDetailsUI)?
+  private var currentViewController: (UIViewController & ShopDetailsPresenter)?
 }
 
 // MARK: - Private Methods
@@ -50,7 +50,7 @@ private extension ShopDetailsContainerViewController {
   func toggleView(_ sender: UISegmentedControl) {
     Prefs.main.lastSelectedDetailsView = sender.selectedSegmentIndex
 
-    var vcToShow: UIViewController & ShopDetailsUI
+    var vcToShow: UIViewController & ShopDetailsPresenter
     switch sender.selectedSegmentIndex {
     case 0: // TimeTable Mode
       vcToShow = StoryboardScene.Main.timeTable.instantiate()
@@ -76,7 +76,7 @@ private extension ShopDetailsContainerViewController {
     self.present(navCtrl, animated: true, completion: nil)
   }
 
-  func embed(viewController: UIViewController & ShopDetailsUI) {
+  func embed(viewController: UIViewController & ShopDetailsPresenter) {
     if let currentVC = self.currentViewController, currentVC == viewController { return }
 
     self.currentViewController?.willMove(toParent: nil)

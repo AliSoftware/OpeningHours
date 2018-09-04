@@ -32,7 +32,7 @@
 		37EF96FB2135811F0029B66E /* TimeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96FA2135811F0029B66E /* TimeListViewController.swift */; };
 		37EF96FD213583FF0029B66E /* TimeClosedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96FC213583FF0029B66E /* TimeClosedCell.swift */; };
 		37EF9700213749FC0029B66E /* NewTimeRangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96FF213749FC0029B66E /* NewTimeRangeViewController.swift */; };
-		37EF970221375D020029B66E /* ShopDetailsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF970121375D020029B66E /* ShopDetailsUI.swift */; };
+		37EF970221375D020029B66E /* ShopDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF970121375D020029B66E /* ShopDetailsPresenter.swift */; };
 		37EF970321376A7D0029B66E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 37EF970521376A7D0029B66E /* Localizable.strings */; };
 		37EF97082137E8370029B66E /* TimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF97072137E8370029B66E /* TimeTable.swift */; };
 		6610E071491F12550A98788D /* Pods_OpeningHours.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13558D62EB517CAE5058C36D /* Pods_OpeningHours.framework */; };
@@ -68,7 +68,7 @@
 		37EF96FA2135811F0029B66E /* TimeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeListViewController.swift; sourceTree = "<group>"; };
 		37EF96FC213583FF0029B66E /* TimeClosedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeClosedCell.swift; sourceTree = "<group>"; };
 		37EF96FF213749FC0029B66E /* NewTimeRangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTimeRangeViewController.swift; sourceTree = "<group>"; };
-		37EF970121375D020029B66E /* ShopDetailsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailsUI.swift; sourceTree = "<group>"; };
+		37EF970121375D020029B66E /* ShopDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailsPresenter.swift; sourceTree = "<group>"; };
 		37EF970421376A7D0029B66E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		37EF970621376ACF0029B66E /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		37EF97072137E8370029B66E /* TimeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTable.swift; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 				37EF96DA2131C1160029B66E /* Prefs.swift */,
 				37EF96F121325C7D0029B66E /* Clock.swift */,
 				37EF96D72131BE9E0029B66E /* ViewStyle.swift */,
-				37EF970121375D020029B66E /* ShopDetailsUI.swift */,
+				37EF970121375D020029B66E /* ShopDetailsPresenter.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -414,7 +414,7 @@
 				37EF96E62131ED410029B66E /* Images+Generated.swift in Sources */,
 				37EF96CD2131A8A80029B66E /* TimeRange.swift in Sources */,
 				37EF96ED21320ADB0029B66E /* ShopDetailsContainerViewController.swift in Sources */,
-				37EF970221375D020029B66E /* ShopDetailsUI.swift in Sources */,
+				37EF970221375D020029B66E /* ShopDetailsPresenter.swift in Sources */,
 				37EF96BA2131A8320029B66E /* ShopsListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

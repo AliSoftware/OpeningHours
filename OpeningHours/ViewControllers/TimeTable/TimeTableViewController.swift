@@ -113,7 +113,7 @@ private extension TimeTableViewController {
 
 // MARK: - ShopDetailsUI
 
-extension TimeTableViewController: ShopDetailsUI {
+extension TimeTableViewController: ShopDetailsPresenter {
   func refresh() {
     self.configure(with: self.shop.timeTable)
   }
