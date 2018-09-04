@@ -11,10 +11,32 @@ import Reusable
 
 class ShopCell: UITableViewCell, Reusable {
 
+  // MARK: - LifeCycle
+
+  override func setEditing(_ editing: Bool, animated: Bool) {
+    super.setEditing(editing, animated: animated)
+    let animationDuration = animated ? 0.3 : 0.0
+    if editing {
+      UIView.animate(
+        withDuration: animationDuration,
+        animations: { self.statusView.alpha = 0.0 },
+        completion: { _ in self.statusView.isHidden = true }
+      )
+    } else {
+      self.statusView.isHidden = false
+      UIView.animate(
+        withDuration: animationDuration,
+        animations: { self.statusView.alpha = 1.0 }
+      )
+    }
+  }
+
   // MARK: - Public Methods
 
   func setup(shop: Shop) {
-    shopNameLabel.text = shop.name
+    shopIconLabel.text = shop.icon
+    shopNameLabel.text = "\(shop.name) — \(shop.details)"
+
     let activeTimeRange = shop.timeTable.activeTimeRange()
     if let activeTimeRange = activeTimeRange {
       let timeLeft = activeTimeRange.minutesRemaining()
@@ -39,6 +61,7 @@ class ShopCell: UITableViewCell, Reusable {
   // MARK: - IBOutlets
 
   @IBOutlet private var statusView: UIView!
+  @IBOutlet private var shopIconLabel: UILabel!
   @IBOutlet private var shopNameLabel: UILabel!
   @IBOutlet private var nextTimeRange: UILabel!
 }

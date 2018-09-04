@@ -29,16 +29,6 @@ internal enum L10n {
     }
   }
 
-  internal enum NewShop {
-
-    internal enum Prompt {
-      /// Shop name:
-      internal static let message = L10n.tr("Localizable", "new_shop.prompt.message")
-      /// New shop
-      internal static let title = L10n.tr("Localizable", "new_shop.prompt.title")
-    }
-  }
-
   internal enum NewTimeRange {
     /// End
     internal static let endTime = L10n.tr("Localizable", "new_time_range.endTime")
@@ -50,13 +40,28 @@ internal enum L10n {
     internal static let weekdays = L10n.tr("Localizable", "new_time_range.weekdays")
   }
 
-  internal enum Rename {
+  internal enum ShopInfo {
 
-    internal enum Prompt {
-      /// Shop name:
-      internal static let message = L10n.tr("Localizable", "rename.prompt.message")
-      /// Edit
-      internal static let title = L10n.tr("Localizable", "rename.prompt.title")
+    internal enum Details {
+      /// Place, additional info…
+      internal static let placeholder = L10n.tr("Localizable", "shop_info.details.placeholder")
+    }
+
+    internal enum Icon {
+      /// 🛒
+      internal static let placeholder = L10n.tr("Localizable", "shop_info.icon.placeholder")
+    }
+
+    internal enum Name {
+      /// Shop name
+      internal static let placeholder = L10n.tr("Localizable", "shop_info.name.placeholder")
+    }
+
+    internal enum Title {
+      /// New shop
+      internal static let new = L10n.tr("Localizable", "shop_info.title.new")
+      /// Rename shop
+      internal static let rename = L10n.tr("Localizable", "shop_info.title.rename")
     }
   }
 

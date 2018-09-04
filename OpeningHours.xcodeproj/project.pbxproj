@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		376E1E53213EA8790078A1F0 /* UIAlertController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E1E52213EA8790078A1F0 /* UIAlertController+Utils.swift */; };
+		376E1E56213ECDEE0078A1F0 /* ShopInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E1E55213ECDEE0078A1F0 /* ShopInfoViewController.swift */; };
 		37EF96B82131A8320029B66E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96B72131A8320029B66E /* AppDelegate.swift */; };
 		37EF96BA2131A8320029B66E /* ShopsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96B92131A8320029B66E /* ShopsListViewController.swift */; };
 		37EF96BC2131A8320029B66E /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96BB2131A8320029B66E /* TimeTableViewController.swift */; };
@@ -43,6 +44,7 @@
 		11655B89818BC0AB4E36717F /* Pods-OpeningHours.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpeningHours.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpeningHours/Pods-OpeningHours.release.xcconfig"; sourceTree = "<group>"; };
 		13558D62EB517CAE5058C36D /* Pods_OpeningHours.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpeningHours.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		376E1E52213EA8790078A1F0 /* UIAlertController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Utils.swift"; sourceTree = "<group>"; };
+		376E1E55213ECDEE0078A1F0 /* ShopInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopInfoViewController.swift; sourceTree = "<group>"; };
 		37EF96B42131A8320029B66E /* OpeningHours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpeningHours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37EF96B72131A8320029B66E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37EF96B92131A8320029B66E /* ShopsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsListViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		376E1E54213ECDDE0078A1F0 /* ShopInfo */ = {
+			isa = PBXGroup;
+			children = (
+				376E1E55213ECDEE0078A1F0 /* ShopInfoViewController.swift */,
+			);
+			path = ShopInfo;
+			sourceTree = "<group>";
+		};
 		37EF96AB2131A8320029B66E = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				37EF96DE2131D2300029B66E /* ShopsList */,
+				376E1E54213ECDDE0078A1F0 /* ShopInfo */,
 				37EF96EE21324E950029B66E /* ShopDetailsContainer */,
 				37EF96DF2131D2790029B66E /* TimeTable */,
 				37EF96F721357E930029B66E /* TimeList */,
@@ -406,6 +417,7 @@
 				37EF96D32131B13F0029B66E /* Shop.swift in Sources */,
 				37EF96F221325C7D0029B66E /* Clock.swift in Sources */,
 				37EF96FB2135811F0029B66E /* TimeListViewController.swift in Sources */,
+				376E1E56213ECDEE0078A1F0 /* ShopInfoViewController.swift in Sources */,
 				376E1E53213EA8790078A1F0 /* UIAlertController+Utils.swift in Sources */,
 				37EF96F0213255920029B66E /* SlotView.swift in Sources */,
 				37EF96DB2131C1160029B66E /* Prefs.swift in Sources */,

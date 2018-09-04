@@ -11,13 +11,17 @@ import Foundation
 class Shop: Codable {
   // MARK: - Public Properties
 
+  var icon: String
   var name: String
+  var details: String
   var timeTable: TimeTable
 
   // MARK: - Setup
 
-  init(name: String, timeTable: TimeTable = TimeTable()) {
+  init(icon: Character?, name: String, details: String, timeTable: TimeTable = TimeTable()) {
+    self.icon = icon.map(String.init) ?? ""
     self.name = name
+    self.details = details
     self.timeTable = timeTable
   }
 
@@ -30,6 +34,6 @@ class Shop: Codable {
 
 extension Shop: CustomStringConvertible {
   var description: String {
-    return "<Shop: \(name)>"
+    return "<Shop: \(icon) \(name) - \(details)>"
   }
 }

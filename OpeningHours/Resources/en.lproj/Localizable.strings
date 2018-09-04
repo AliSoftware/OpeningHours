@@ -18,10 +18,12 @@
 "shop_state.open" = "Open";
 "shop_state.closing_soon" = "Closes in %d minutes";
 
-"new_shop.prompt.title" = "New shop";
-"new_shop.prompt.message" = "Shop name:";
-"rename.prompt.title" = "Edit";
-"rename.prompt.message" = "Shop name:";
+"shop_info.title.new" = "New shop";
+"shop_info.title.rename" = "Rename shop";
+"shop_info.icon.placeholder" = "🛒";
+"shop_info.name.placeholder" = "Shop name";
+"shop_info.details.placeholder" = "Place, additional info…";
+
 "delete.alert.title" = "Delete this shop?";
 "delete.alert.message" = "This operation can't be undone";
 

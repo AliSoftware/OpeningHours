@@ -23,7 +23,7 @@ class ShopsListViewController: UITableViewController {
     self.navigationItem.leftBarButtonItem =
       UIBarButtonItem(title: L10n.About.button, style: .plain, target: self, action: #selector(about))
     self.navigationItem.rightBarButtonItems = [
-      UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewShop)),
+      UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewShop(_:))),
       self.editButtonItem
     ]
 
@@ -62,7 +62,7 @@ class ShopsListViewController: UITableViewController {
   override func tableView(_ tableView: UITableView,
                           editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
     let delete = UITableViewRowAction(style: .destructive, title: L10n.ShopsList.delete) { (_, indexPath) in
-      UIAlertController.confirm(
+      let alert = UIAlertController.confirm(
         title: L10n.Delete.Alert.title,
         message: L10n.Delete.Alert.title,
         destructive: true
@@ -70,19 +70,23 @@ class ShopsListViewController: UITableViewController {
           guard confirmed else { return }
           self.shops.remove(at: indexPath.row)
           tableView.deleteRows(at: [indexPath], with: .fade)
-      }.present(on: self)
+      }
+      self.present(alert, animated: true, completion: nil)
     }
 
     let rename = UITableViewRowAction(style: .default, title: L10n.ShopsList.rename) { (_, indexPath) in
-      UIAlertController.prompt(
-        title: L10n.Rename.Prompt.title,
-        message: L10n.Rename.Prompt.message,
-        defaultValue: self.shops[indexPath.row].name
-      ) { name in
-        guard let newName = name else { return }
-        self.shops[indexPath.row].name = newName
+      let shopInfoVC = StoryboardScene.Main.shopInfoViewController.instantiate()
+      let rect = self.tableView.rectForRow(at: indexPath)
+      shopInfoVC.configurePresentation(sourceView: self.tableView, sourceRect: rect) { shopInfo in
+        guard let info = shopInfo else { return }
+        let shop = self.shops[indexPath.row]
+        shop.icon = info.icon.map(String.init) ?? ""
+        shop.name = info.name
+        shop.details = info.details
         self.tableView.reloadData()
-      }.present(on: self)
+      }
+      shopInfoVC.prefill(with: self.shops[indexPath.row])
+      self.present(shopInfoVC, animated: true, completion: nil)
     }
     rename.backgroundColor = UIColor.lightGray
 
@@ -121,17 +125,15 @@ private extension ShopsListViewController {
   }
 
   @objc
-  func addNewShop() {
-    UIAlertController.prompt(
-      title: L10n.NewShop.Prompt.title,
-      message: L10n.NewShop.Prompt.message,
-      defaultValue: ""
-    ) { name in
-      guard let shopName = name else { return }
-      let newShop = Shop(name: shopName)
+  func addNewShop(_ sender: UIBarButtonItem) {
+    let shopInfoVC = StoryboardScene.Main.shopInfoViewController.instantiate()
+    shopInfoVC.configurePresentation(barButtonItem: sender) { shopInfo in
+      guard let info = shopInfo else { return }
+      let newShop = Shop(icon: info.icon, name: info.name, details: info.details)
       self.shops.append(newShop)
       self.tableView.reloadData()
-    }.present(on: self)
+    }
+    self.present(shopInfoVC, animated: true, completion: nil)
   }
 
   func createDetailsContainer(indexPath: IndexPath) -> UIViewController {

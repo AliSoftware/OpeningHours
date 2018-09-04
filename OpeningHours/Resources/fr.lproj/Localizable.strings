@@ -18,10 +18,12 @@
 "shop_state.open" = "Ouvert";
 "shop_state.closing_soon" = "Ferme dans %d minutes";
 
-"new_shop.prompt.title" = "Nouvelle enseigne";
-"new_shop.prompt.message" = "Nom du magasin :";
-"rename.prompt.title" = "Modifier";
-"rename.prompt.message" = "Nom du magasin :";
+"shop_info.title.new" = "Nouvelle enseigne";
+"shop_info.title.rename" = "Renommer enseigne";
+"shop_info.icon.placeholder" = "🛒";
+"shop_info.name.placeholder" = "Nom du magasin";
+"shop_info.details.placeholder" = "Lieu, infos…";
+
 "delete.alert.title" = "Supprimer le magasin ?";
 "delete.alert.message" = "Cette opération est irréversible";
 
