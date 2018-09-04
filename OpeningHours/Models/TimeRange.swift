@@ -39,7 +39,7 @@ extension TimeRange {
   }
 
   func contains(_ time: Time) -> Bool {
-    return start <= time && time <= end
+    return start <= time && time < end
   }
 
   static func ~= (range: TimeRange, time: Time) -> Bool {

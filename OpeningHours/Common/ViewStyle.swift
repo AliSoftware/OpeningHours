@@ -29,6 +29,12 @@ extension ViewStyle {
     borderWidth: 1,
     cornerRadius: 3
   )
+  static let activeTimeSlot = ViewStyle(
+    backgroundColor: UIColor(red: 0.5, green: 0.9, blue: 0.5, alpha: 0.8),
+    borderColor: UIColor(red: 0.0, green: 0.3, blue: 0.0, alpha: 1.0),
+    borderWidth: 1,
+    cornerRadius: 3
+  )
   static let lightFrame = ViewStyle(
     backgroundColor: nil,
     borderColor: .lightGray,
@@ -41,4 +47,5 @@ extension ViewStyle {
     borderWidth: 1,
     cornerRadius: 1
   )
+  static let activeRangeColor = UIColor.green.withAlphaComponent(0.1)
 }

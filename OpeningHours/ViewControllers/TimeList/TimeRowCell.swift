@@ -17,7 +17,7 @@ class TimeRowCell: UITableViewCell, Reusable {
     self.timeLabel.text = timeRange.description
     let isActive = day == .today && timeRange.contains(.now)
     self.activeIndicator.isHidden = !isActive
-    self.contentView.backgroundColor = isActive ? UIColor.green.withAlphaComponent(0.1) : .white
+    self.contentView.backgroundColor = isActive ? ViewStyle.activeRangeColor : .white
   }
 
   // MARK: - IBOutlet

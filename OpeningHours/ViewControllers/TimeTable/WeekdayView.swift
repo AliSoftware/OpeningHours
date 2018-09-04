@@ -50,14 +50,14 @@ class WeekdayView: UIView {
 
   // MARK: - Public Methods
 
-  func configure(ranges: [TimeRange], style: ViewStyle) {
+  func configure(ranges: [TimeRange]) {
     self.slotViews.forEach { $0.removeFromSuperview() }
     self.slotViews = ranges.map { (range: TimeRange) -> SlotView in
       let view = SlotView(range: range)
       let tapGR = UITapGestureRecognizer(target: self, action: #selector(showMenu(_:)))
       view.isUserInteractionEnabled = true
       view.addGestureRecognizer(tapGR)
-      style.apply(to: view)
+      ViewStyle.timeSlot.apply(to: view)
       return view
     }
     self.slotViews.forEach { self.addSubview($0) }
@@ -72,8 +72,11 @@ class WeekdayView: UIView {
     ViewStyle.nowIndicator.apply(to: view)
     return view
   }()
+}
 
-  // MARK: - Private Methods
+// MARK: - Private Methods
+
+extension WeekdayView {
 
   private func setup() {
     self.addSubview(currentTimeView)
@@ -97,6 +100,14 @@ class WeekdayView: UIView {
     )
     self.currentTimeView.isHidden = false
     self.bringSubviewToFront(self.currentTimeView)
+
+    for slotView in self.slotViews {
+      if let time = self.currentTime, slotView.range.contains(time) {
+        ViewStyle.activeTimeSlot.apply(to: slotView)
+      } else {
+        ViewStyle.timeSlot.apply(to: slotView)
+      }
+    }
   }
 
   @objc
