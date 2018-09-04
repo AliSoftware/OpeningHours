@@ -22,8 +22,10 @@ class ShopsListViewController: UITableViewController {
     self.title = L10n.ShopsList.title
     self.navigationItem.leftBarButtonItem =
       UIBarButtonItem(title: L10n.About.button, style: .plain, target: self, action: #selector(about))
-    self.navigationItem.rightBarButtonItem =
-      UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewShop))
+    self.navigationItem.rightBarButtonItems = [
+      UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewShop)),
+      self.editButtonItem
+    ]
 
     self.refreshClock = Clock { [weak self] in
       self?.tableView.reloadData() // To update open/close status on each cell
@@ -60,12 +62,19 @@ class ShopsListViewController: UITableViewController {
   override func tableView(_ tableView: UITableView,
                           editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
     let delete = UITableViewRowAction(style: .destructive, title: L10n.ShopsList.delete) { (_, indexPath) in
-      self.shops.remove(at: indexPath.row)
-      tableView.deleteRows(at: [indexPath], with: .fade)
+      UIAlertController.confirm(
+        title: L10n.Delete.Alert.title,
+        message: L10n.Delete.Alert.title,
+        destructive: true
+      ) { confirmed in
+          guard confirmed else { return }
+          self.shops.remove(at: indexPath.row)
+          tableView.deleteRows(at: [indexPath], with: .fade)
+      }.present(on: self)
     }
 
     let rename = UITableViewRowAction(style: .default, title: L10n.ShopsList.rename) { (_, indexPath) in
-      self.prompt(
+      UIAlertController.prompt(
         title: L10n.Rename.Prompt.title,
         message: L10n.Rename.Prompt.message,
         defaultValue: self.shops[indexPath.row].name
@@ -73,11 +82,18 @@ class ShopsListViewController: UITableViewController {
         guard let newName = name else { return }
         self.shops[indexPath.row].name = newName
         self.tableView.reloadData()
-      }
+      }.present(on: self)
     }
     rename.backgroundColor = UIColor.lightGray
 
     return [delete, rename]
+  }
+
+  override func tableView(_ tableView: UITableView,
+                          moveRowAt sourceIndexPath: IndexPath,
+                          to destinationIndexPath: IndexPath) {
+    let movedShop = self.shops.remove(at: sourceIndexPath.row)
+    self.shops.insert(movedShop, at: destinationIndexPath.row)
   }
 
   // MARK: - Private Properties
@@ -106,7 +122,7 @@ private extension ShopsListViewController {
 
   @objc
   func addNewShop() {
-    prompt(
+    UIAlertController.prompt(
       title: L10n.NewShop.Prompt.title,
       message: L10n.NewShop.Prompt.message,
       defaultValue: ""
@@ -115,19 +131,7 @@ private extension ShopsListViewController {
       let newShop = Shop(name: shopName)
       self.shops.append(newShop)
       self.tableView.reloadData()
-    }
-  }
-
-  func prompt(title: String, message: String, defaultValue: String, completion: @escaping (String?) -> Void) {
-    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    alert.addTextField { $0.text = defaultValue }
-    alert.addAction(UIAlertAction(title: L10n.cancel, style: .cancel) { _ in
-      completion(nil)
-    })
-    alert.addAction(UIAlertAction(title: L10n.ok, style: .default) { _ in
-      completion(alert.textFields?[0].text ?? "")
-    })
-    self.present(alert, animated: true, completion: nil)
+    }.present(on: self)
   }
 
   func createDetailsContainer(indexPath: IndexPath) -> UIViewController {

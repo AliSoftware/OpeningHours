@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		376E1E53213EA8790078A1F0 /* UIAlertController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E1E52213EA8790078A1F0 /* UIAlertController+Utils.swift */; };
 		37EF96B82131A8320029B66E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96B72131A8320029B66E /* AppDelegate.swift */; };
 		37EF96BA2131A8320029B66E /* ShopsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96B92131A8320029B66E /* ShopsListViewController.swift */; };
 		37EF96BC2131A8320029B66E /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EF96BB2131A8320029B66E /* TimeTableViewController.swift */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		11655B89818BC0AB4E36717F /* Pods-OpeningHours.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpeningHours.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpeningHours/Pods-OpeningHours.release.xcconfig"; sourceTree = "<group>"; };
 		13558D62EB517CAE5058C36D /* Pods_OpeningHours.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpeningHours.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		376E1E52213EA8790078A1F0 /* UIAlertController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Utils.swift"; sourceTree = "<group>"; };
 		37EF96B42131A8320029B66E /* OpeningHours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpeningHours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37EF96B72131A8320029B66E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37EF96B92131A8320029B66E /* ShopsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsListViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				37EF96F121325C7D0029B66E /* Clock.swift */,
 				37EF96D72131BE9E0029B66E /* ViewStyle.swift */,
 				37EF970121375D020029B66E /* ShopDetailsPresenter.swift */,
+				376E1E52213EA8790078A1F0 /* UIAlertController+Utils.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				37EF96D32131B13F0029B66E /* Shop.swift in Sources */,
 				37EF96F221325C7D0029B66E /* Clock.swift in Sources */,
 				37EF96FB2135811F0029B66E /* TimeListViewController.swift in Sources */,
+				376E1E53213EA8790078A1F0 /* UIAlertController+Utils.swift in Sources */,
 				37EF96F0213255920029B66E /* SlotView.swift in Sources */,
 				37EF96DB2131C1160029B66E /* Prefs.swift in Sources */,
 				37EF96D12131B1290029B66E /* Weekday.swift in Sources */,

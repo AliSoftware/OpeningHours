@@ -22,6 +22,8 @@
 "new_shop.prompt.message" = "Nom du magasin :";
 "rename.prompt.title" = "Modifier";
 "rename.prompt.message" = "Nom du magasin :";
+"delete.alert.title" = "Supprimer le magasin ?";
+"delete.alert.message" = "Cette opération est irréversible";
 
 "new_time_range.title" = "Nouveau créneau";
 "new_time_range.weekdays" = "Jours de la semaine";

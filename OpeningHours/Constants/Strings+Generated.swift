@@ -19,6 +19,16 @@ internal enum L10n {
     internal static let title = L10n.tr("Localizable", "about.title")
   }
 
+  internal enum Delete {
+
+    internal enum Alert {
+      /// This operation can't be undone
+      internal static let message = L10n.tr("Localizable", "delete.alert.message")
+      /// Delete this shop?
+      internal static let title = L10n.tr("Localizable", "delete.alert.title")
+    }
+  }
+
   internal enum NewShop {
 
     internal enum Prompt {

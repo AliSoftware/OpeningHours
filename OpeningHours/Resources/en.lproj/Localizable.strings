@@ -22,6 +22,8 @@
 "new_shop.prompt.message" = "Shop name:";
 "rename.prompt.title" = "Edit";
 "rename.prompt.message" = "Shop name:";
+"delete.alert.title" = "Delete this shop?";
+"delete.alert.message" = "This operation can't be undone";
 
 "new_time_range.title" = "New slot";
 "new_time_range.weekdays" = "Week days";
