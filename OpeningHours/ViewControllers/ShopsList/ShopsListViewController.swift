@@ -103,8 +103,7 @@ private extension ShopsListViewController {
   func renameRowAction(for indexPath: IndexPath) -> UITableViewRowAction {
     let action = UITableViewRowAction(style: .default, title: L10n.ShopsList.rename) { (_, indexPath) in
       let shopInfoVC = StoryboardScene.Main.shopInfoViewController.instantiate()
-      var rect = self.tableView.rectForRow(at: indexPath)
-      rect.size.width = 64
+      let rect = self.tableView.rectForRow(at: indexPath)
       shopInfoVC.configurePresentation(sourceView: self.tableView, sourceRect: rect) { shopInfo in
         guard let info = shopInfo else { return }
         let shop = self.shops[indexPath.row]

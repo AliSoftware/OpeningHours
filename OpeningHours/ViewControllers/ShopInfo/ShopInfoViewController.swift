@@ -129,6 +129,24 @@ extension ShopInfoViewController: UIPopoverPresentationControllerDelegate {
     return .none
   }
 
+  func popoverPresentationController(
+    _ popoverPresentationController: UIPopoverPresentationController,
+    willRepositionPopoverTo rect: UnsafeMutablePointer<CGRect>,
+    in view: AutoreleasingUnsafeMutablePointer<UIView>
+  ) {
+    if self.traitCollection.verticalSizeClass == .compact {
+      // If vertical is compact (typical case of Landscape mode), force
+      // the popover to be displayed on the right of the cell instead of
+      // above/below it, to avoid being compressed even more by the keyboard
+      popoverPresentationController.permittedArrowDirections = .left
+    } else {
+      // If vertical is regular, we typically have enoug space to display
+      // the popover above/below the cell, without the risk of being compressed
+      // by the keyboard, while looking nicer
+      popoverPresentationController.permittedArrowDirections = [.up, .down]
+    }
+  }
+
   func popoverPresentationControllerDidDismissPopover(
     _ popoverPresentationController: UIPopoverPresentationController
   ) {
