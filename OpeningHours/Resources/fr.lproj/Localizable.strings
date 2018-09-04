@@ -24,8 +24,8 @@
 "shop_info.name.placeholder" = "Nom du magasin";
 "shop_info.details.placeholder" = "Lieu, infos…";
 
-"delete.alert.title" = "Supprimer le magasin ?";
-"delete.alert.message" = "Cette opération est irréversible";
+"delete.alert.title" = "Supprimer le magasin";
+"delete.alert.message" = "Êtes-vous sûr de vouloir supprimer «%@ (%@)» ?\nCette opération est irréversible";
 
 "new_time_range.title" = "Nouveau créneau";
 "new_time_range.weekdays" = "Jours de la semaine";

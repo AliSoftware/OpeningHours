@@ -84,10 +84,11 @@ class ShopsListViewController: UITableViewController {
 private extension ShopsListViewController {
 
   func deleteRowAction(for indexPath: IndexPath) -> UITableViewRowAction {
+    let shop = self.shops[indexPath.row]
     let action = UITableViewRowAction(style: .destructive, title: L10n.ShopsList.delete) { (_, indexPath) in
       let alert = UIAlertController.confirm(
         title: L10n.Delete.Alert.title,
-        message: L10n.Delete.Alert.title,
+        message: L10n.Delete.Alert.message(shop.name, shop.details),
         destructive: true
       ) { confirmed in
         guard confirmed else { return }

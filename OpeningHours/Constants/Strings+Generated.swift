@@ -22,9 +22,11 @@ internal enum L10n {
   internal enum Delete {
 
     internal enum Alert {
-      /// This operation can't be undone
-      internal static let message = L10n.tr("Localizable", "delete.alert.message")
-      /// Delete this shop?
+      /// Are you sure you want to delete «%@ (%@)»?\nThis operation can't be undone
+      internal static func message(_ p1: String, _ p2: String) -> String {
+        return L10n.tr("Localizable", "delete.alert.message", p1, p2)
+      }
+      /// Delete this shop
       internal static let title = L10n.tr("Localizable", "delete.alert.title")
     }
   }

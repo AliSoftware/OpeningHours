@@ -24,8 +24,8 @@
 "shop_info.name.placeholder" = "Shop name";
 "shop_info.details.placeholder" = "Place, additional info…";
 
-"delete.alert.title" = "Delete this shop?";
-"delete.alert.message" = "This operation can't be undone";
+"delete.alert.title" = "Delete this shop";
+"delete.alert.message" = "Are you sure you want to delete «%@ (%@)»?\nThis operation can't be undone";
 
 "new_time_range.title" = "New slot";
 "new_time_range.weekdays" = "Week days";
