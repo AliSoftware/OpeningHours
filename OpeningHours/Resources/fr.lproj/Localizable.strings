@@ -16,7 +16,7 @@
 "shop_state.closed" = "Fermé";
 "shop_state.next_opening" = "Réouvre à %@";
 "shop_state.open" = "Ouvert";
-"shop_state.closing_soon" = "Ferme dans %d minutes";
+"shop_state.closing_soon" = "Ferme dans %dmn";
 
 "shop_info.title.new" = "Nouvelle enseigne";
 "shop_info.title.rename" = "Renommer enseigne";

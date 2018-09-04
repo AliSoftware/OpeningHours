@@ -61,36 +61,10 @@ class ShopsListViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView,
                           editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-    let delete = UITableViewRowAction(style: .destructive, title: L10n.ShopsList.delete) { (_, indexPath) in
-      let alert = UIAlertController.confirm(
-        title: L10n.Delete.Alert.title,
-        message: L10n.Delete.Alert.title,
-        destructive: true
-      ) { confirmed in
-          guard confirmed else { return }
-          self.shops.remove(at: indexPath.row)
-          tableView.deleteRows(at: [indexPath], with: .fade)
-      }
-      self.present(alert, animated: true, completion: nil)
-    }
-
-    let rename = UITableViewRowAction(style: .default, title: L10n.ShopsList.rename) { (_, indexPath) in
-      let shopInfoVC = StoryboardScene.Main.shopInfoViewController.instantiate()
-      let rect = self.tableView.rectForRow(at: indexPath)
-      shopInfoVC.configurePresentation(sourceView: self.tableView, sourceRect: rect) { shopInfo in
-        guard let info = shopInfo else { return }
-        let shop = self.shops[indexPath.row]
-        shop.icon = info.icon.map(String.init) ?? ""
-        shop.name = info.name
-        shop.details = info.details
-        self.tableView.reloadData()
-      }
-      shopInfoVC.prefill(with: self.shops[indexPath.row])
-      self.present(shopInfoVC, animated: true, completion: nil)
-    }
-    rename.backgroundColor = UIColor.lightGray
-
-    return [delete, rename]
+    return [
+      self.deleteRowAction(for: indexPath),
+      self.renameRowAction(for: indexPath)
+    ]
   }
 
   override func tableView(_ tableView: UITableView,
@@ -108,6 +82,42 @@ class ShopsListViewController: UITableViewController {
 // MARK: - Private Methods
 
 private extension ShopsListViewController {
+
+  func deleteRowAction(for indexPath: IndexPath) -> UITableViewRowAction {
+    let action = UITableViewRowAction(style: .destructive, title: L10n.ShopsList.delete) { (_, indexPath) in
+      let alert = UIAlertController.confirm(
+        title: L10n.Delete.Alert.title,
+        message: L10n.Delete.Alert.title,
+        destructive: true
+      ) { confirmed in
+        guard confirmed else { return }
+        self.shops.remove(at: indexPath.row)
+        self.tableView.deleteRows(at: [indexPath], with: .fade)
+      }
+      self.present(alert, animated: true, completion: nil)
+    }
+    return action
+  }
+
+  func renameRowAction(for indexPath: IndexPath) -> UITableViewRowAction {
+    let action = UITableViewRowAction(style: .default, title: L10n.ShopsList.rename) { (_, indexPath) in
+      let shopInfoVC = StoryboardScene.Main.shopInfoViewController.instantiate()
+      var rect = self.tableView.rectForRow(at: indexPath)
+      rect.size.width = 64
+      shopInfoVC.configurePresentation(sourceView: self.tableView, sourceRect: rect) { shopInfo in
+        guard let info = shopInfo else { return }
+        let shop = self.shops[indexPath.row]
+        shop.icon = info.icon.map(String.init) ?? ""
+        shop.name = info.name
+        shop.details = info.details
+        self.tableView.reloadData()
+      }
+      shopInfoVC.prefill(with: self.shops[indexPath.row])
+      self.present(shopInfoVC, animated: true, completion: nil)
+    }
+    action.backgroundColor = UIColor.lightGray
+    return action
+  }
 
   @objc
   func about() {

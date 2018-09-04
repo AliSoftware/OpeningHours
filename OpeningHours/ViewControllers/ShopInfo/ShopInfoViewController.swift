@@ -86,6 +86,7 @@ private extension ShopInfoViewController {
     self.modalPresentationStyle = .popover
     self.preferredContentSize = CGSize(width: 300, height: 150)
     let popover = self.popoverPresentationController
+    popover?.permittedArrowDirections = .any
     popover?.delegate = self
     self.completion = completion
     return popover

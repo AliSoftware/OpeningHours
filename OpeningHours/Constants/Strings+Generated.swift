@@ -68,7 +68,7 @@ internal enum L10n {
   internal enum ShopState {
     /// Closed
     internal static let closed = L10n.tr("Localizable", "shop_state.closed")
-    /// Closes in %d minutes
+    /// Closes in %dmn
     internal static func closingSoon(_ p1: Int) -> String {
       return L10n.tr("Localizable", "shop_state.closing_soon", p1)
     }
