@@ -1,4 +1,9 @@
-# Opening Hours
+<table><tr height="80px">
+<td rowspan=2><img src="Assets/AppIcon-1024.png" width="120px" /></td>
+<td><h1>Opening Hours</h1></td>
+</tr><tr height="40px">
+<td><small>The iOS App to keep track of the Opening Hours of your favorite shops</small></td>
+</tr></table>
 
 This iOS project allows you to easily store a list of opening hours for your favorite shops.
 
