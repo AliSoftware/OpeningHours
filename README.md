@@ -6,7 +6,17 @@ It's quite simple (just a list of shop, for each a TimeTable listing opening hou
 
 But it's very handy.
 
+## Screenshots
+
+<a href="Assets/Screenshot-ShopsList.png"><img src="Assets/Screenshot-ShopsList.png" width="250px" /></a>
+<a href="Assets/Screenshot-TimeTable.png"><img src="Assets/Screenshot-TimeTable.png" width="250px" /></a>
+<a href="Assets/Screenshot-TimeList.png"><img src="Assets/Screenshot-TimeList.png" width="250px" /></a>
+
 ## Improvement Ideas
+
+This is a toy project that I ended up using personally, but I didn't really planned to spend a lot of time on it. I just needed it because I was tired of looking at the opening hours of my shops online every time and wanted a quickly accessible list.
+
+But if someone has time, here are some ideas to improve it that I never took the time to implement.
 
 ### Allow the modification of an existing TimeRange
 
@@ -32,3 +42,7 @@ The question that this feature raises is how to alert the user when we create ne
 Currently the shops are only saved to UserDefaults when the app goes in background. This means that if the app crashes after a change, we don't save the modifications between the last switch to forground and the crash.
 
 We could imagine saving (by sending a `NSNotification` to the `ShopListViewController`?) every time we do a modification of a shop (changing its name/details/icon, changing its TimeTable to add TimeRanges, …)
+
+### WatchApp
+
+Add a companion WatchApp to display the list of all shops and an icon if they're open or not.

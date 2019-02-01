@@ -1,7 +1,7 @@
 #!/bin/sh
 
 SRC="AppIcon-1024.png"
-DST="OpeningHours/Resources/Assets.xcassets/AppIcon.appiconset"
+DST="../OpeningHours/Resources/Assets.xcassets/AppIcon.appiconset"
 
 cp "$SRC" "$DST/AppIcon-1024.png"
 sips -z 167 167 "$SRC" --out "$DST/AppIcon-iPadPro@2x.png"
