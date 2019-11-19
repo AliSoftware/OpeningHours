@@ -1,12 +1,15 @@
 xcassets:
-  paths: OpeningHours/Resources/Assets.xcassets
-  templateName: swift4
-  output: OpeningHours/Constants/Images+Generated.swift
-storyboards:
-  paths: OpeningHours
-  templateName: swift4
-  output: OpeningHours/Constants/Storyboards+Generated.swift
+  inputs: OpeningHours/Resources/Assets.xcassets
+  outputs:
+    templateName: swift4
+    output: OpeningHours/Constants/Images+Generated.swift
+ib:
+  inputs: OpeningHours
+  outputs:
+    templateName: scenes-swift4
+    output: OpeningHours/Constants/Storyboards+Generated.swift
 strings:
-  paths: OpeningHours/Resources/en.lproj/Localizable.strings
-  templateName: structured-swift4
-  output: OpeningHours/Constants/Strings+Generated.swift
+  inputs: OpeningHours/Resources/en.lproj/Localizable.strings
+  outputs:
+    templateName: structured-swift4
+    output: OpeningHours/Constants/Strings+Generated.swift

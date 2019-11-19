@@ -1,11 +1,15 @@
-// Generated using SwiftGen, by O.Halligon — https://github.com/SwiftGen/SwiftGen
+// swiftlint:disable all
+// Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
 
 import Foundation
 
 // swiftlint:disable superfluous_disable_command
 // swiftlint:disable file_length
 
-// swiftlint:disable explicit_type_interface identifier_name line_length nesting type_body_length type_name
+// MARK: - Strings
+
+// swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
+// swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
   /// Cancel
   internal static let cancel = L10n.tr("Localizable", "cancel")
@@ -20,7 +24,6 @@ internal enum L10n {
   }
 
   internal enum Delete {
-
     internal enum Alert {
       /// Are you sure you want to delete «%@ (%@)»?\nThis operation can't be undone
       internal static func message(_ p1: String, _ p2: String) -> String {
@@ -43,22 +46,18 @@ internal enum L10n {
   }
 
   internal enum ShopInfo {
-
     internal enum Details {
       /// Place, additional info…
       internal static let placeholder = L10n.tr("Localizable", "shop_info.details.placeholder")
     }
-
     internal enum Icon {
       /// 🛒
       internal static let placeholder = L10n.tr("Localizable", "shop_info.icon.placeholder")
     }
-
     internal enum Name {
       /// Shop name
       internal static let placeholder = L10n.tr("Localizable", "shop_info.name.placeholder")
     }
-
     internal enum Title {
       /// New shop
       internal static let new = L10n.tr("Localizable", "shop_info.title.new")
@@ -91,10 +90,14 @@ internal enum L10n {
     internal static let title = L10n.tr("Localizable", "shops_list.title")
   }
 }
-// swiftlint:enable explicit_type_interface identifier_name line_length nesting type_body_length type_name
+// swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
+// swiftlint:enable nesting type_body_length type_name
+
+// MARK: - Implementation Details
 
 extension L10n {
   private static func tr(_ table: String, _ key: String, _ args: CVarArg...) -> String {
+    // swiftlint:disable:next nslocalizedstring_key
     let format = NSLocalizedString(key, tableName: table, bundle: Bundle(for: BundleToken.self), comment: "")
     return String(format: format, locale: Locale.current, arguments: args)
   }
