@@ -20,9 +20,9 @@ class TimeListViewController: UITableViewController {
     super.viewDidAppear(animated)
 
     if
-      let dayIndex = Weekday.ordered().index(of: .today),
+      let dayIndex = Weekday.ordered().firstIndex(of: .today),
       let activeRange = self.shop.timeTable.activeTimeRange(),
-      let rangeIndex = self.shop.timeTable[.today].index(of: activeRange)
+      let rangeIndex = self.shop.timeTable[.today].firstIndex(of: activeRange)
     {
       let indexPath = IndexPath(row: rangeIndex, section: dayIndex)
       self.tableView.scrollToRow(at: indexPath, at: .middle, animated: true)

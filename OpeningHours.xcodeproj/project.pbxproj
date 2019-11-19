@@ -288,6 +288,7 @@
 				TargetAttributes = {
 					37EF96B32131A8320029B66E = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -600,7 +601,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.niji.alisoftware.OpeningHours;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Generic Dev";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -622,7 +623,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.niji.alisoftware.OpeningHours;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Niji InHouse OTA";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
